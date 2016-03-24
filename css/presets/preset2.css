@@ -1,0 +1,242 @@
+::selection {
+  color: #fff;
+  background: #04d361; /* Safari */
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #04d361; /* Firefox */
+}
+
+.blog-content h2 a:hover, .blog-content .post-meta li a:hover{
+	color: #04d361;
+}
+
+a,a:hover,
+.blog-content h3 a:hover{
+  color:#04d361;
+}
+
+.btn-transparent:after{
+  background: #04d361;
+}
+
+.btn-transparent{
+  -webkit-box-shadow: inset 0 0 0 1px #04d361;
+  box-shadow: inset 0 0 0 1px #04d361;
+}
+
+#header .navbar-inverse .navbar-nav  .active  > a,  
+#header .navbar-inverse .navbar-nav  .active  > a:focus, 
+#header .navbar-nav.navbar-right li > a:hover,
+.navbar-inverse .navbar-nav > .open > a{
+  color:#04d361;
+  border-color:#04d361;
+}
+
+
+#header .navbar-inverse .navbar-nav .dropdown-menu > li:hover {
+  border-bottom: 1px solid #04d361;
+}
+
+.dropdown-menu {
+  border-top: 3px solid #04d361;
+}
+
+.carousel-indicators .active{
+  background-color: #04d361 !important;
+}
+
+#home-carousel .carousel-inner h2 span{
+  color:#04d361;
+}
+
+#home-carousel .carousel-left:hover,
+#home-carousel .carousel-right:hover,
+#respond input:focus, #respond textarea:focus{
+  border-color: #04d361;
+}
+
+.features-nav  .media i:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #04d361;
+}
+
+.features-nav .active .media i, 
+.features-nav li:hover  .media i {
+  background-color: #04d361;
+  border-color: #04d361;
+}
+
+#portfolio .portfolio-filter li .active{
+  border: 1px solid #04d361;
+  color: #04d361;
+}
+
+#portfolio .portfolio-filter li a:hover, 
+#portfolio .portfolio-filter li a:focus,
+#portfolio .portfolio-filter li a:active {
+  color: #04d361;
+}
+
+.mask i {
+  border: 1px solid #04d361;
+  color: #04d361;
+}
+
+.mask i:hover{
+  background-color:#04d361;  
+}
+
+.carousel-left:hover, 
+.carousel-right:hover {
+  background: #04d361;
+}
+
+.carousel-left, 
+.carousel-right {
+  border: 1px solid #04d361;
+  color: #04d361;
+}
+
+#team-member-carousel .team-member:hover{
+  background-color: #04d361;
+}
+
+#our-team .carousel-left:hover,
+#our-team .carousel-right:hover{
+  border: 1px solid #04d361;;
+}
+
+.testimonial p span{
+  color:#04d361;
+}
+
+.single-blog .date {
+  background: none repeat scroll 0 0 #04d361;
+}
+
+#contact-wrap .btn-primary {
+  background: #04d361;
+}
+
+#contact-wrap .form-control:focus {
+  border-color: #04d361;
+}
+
+#footer a {
+  color:#04d361;
+}
+
+
+.btn-readmore {
+  background-color: #04d361;
+}
+
+.carousel-blog-control {
+  background: #04d361;
+}
+
+.btn-reply:hover,
+{
+  background:#04d361;
+}
+
+.btn-send, .blog-content .date{
+  background: #04d361;
+  }
+  
+
+.replay-box form span input:focus, 
+.replay-box form textarea:focus{
+	border-color: #04d361;
+}  
+
+.pagination-lg li a:hover {
+  background-color: #04d361;
+}
+
+.pagination  .active  a, 
+.pagination  .active  span, 
+.pagination  .active  a:hover, 
+.pagination  .active  span:hover, 
+.pagination  .active  a:focus, 
+.pagination  .active  span:focus {
+  background-color: #04d361;
+}
+
+.btn-search, .btn-plan,
+.load-wrap .load-more{
+  background: #04d361;
+}
+
+.blog_category li a:hover, 
+.blog_category li a:focus,
+.single-blog-content h2 a:hover,
+.single-blog-content .post-meta li a:hover {
+	color: #04d361;
+}
+
+ul.plan:hover {
+  border-color: #04d361;
+}
+
+ul.plan:hover .plan-name {
+  background: #04d361;
+}
+
+ul.plan:hover .plan-price {
+  border-color: #04d361 ;
+}
+
+.tag-cloud li a:hover, .tag-cloud li a:focus {
+  background-color: #04d361;
+}
+
+.portfolio-prev:hover, 
+.portfolio-next:hover {
+  background:#04d361;
+  border-color:#04d361;
+}
+
+.client-carousel-left:hover,  
+.client-carousel-right:hover,
+.client-carousel-left:focus,  
+.client-carousel-right:focus {
+  background:#04d361;
+  border-color:#04d361;
+}
+
+.single-carousel-right, 
+.single-carousel-left {
+  background:#04d361;
+  border: 1px solid #04d361;
+}
+
+.search_box:focus{
+  border-color: #04d361;
+}
+
+.widget ul li a:hover {
+color: #04d361;
+}
+
+.widget .tagcloud a:hover,
+.btn-style,
+#comments .form-submit #submit{
+  background-color: #04d361;
+}
+
+.btn-reply:hover {
+background: #04d361;
+}
+
+
+@media (max-width: 767px) { 
+  
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li.active > a, 
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li.active > a:focus, 
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li > a:hover {
+    border-left: 2px solid #04d361;
+  }
+
+}

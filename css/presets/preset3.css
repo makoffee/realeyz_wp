@@ -1,0 +1,330 @@
+::selection {
+  color: #fff;
+  background: #d63d34; /* Safari */
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #d63d34; /* Firefox */
+}
+
+.blog-content h2 a:hover, .blog-content .post-meta li a:hover{
+	color: #d63d34;
+}
+
+a,a:hover,
+.blog-content h3 a:hover{
+  color:#d63d34;
+}
+.navbar-brand {
+    padding: 13px 15px;
+}
+
+#header .navbar {
+    -webkit-box-shadow: 0px 0px 18px -2px rgba(0,0,0,0.61);
+-moz-box-shadow: 0px 0px 18px -2px rgba(0,0,0,0.61);
+box-shadow: 0px 0px 18px -2px rgba(0,0,0,0.61);
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.9+0,1+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0.9) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0.9) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+opacity:1;
+
+}
+
+
+
+#header .navbar-inverse .navbar-nav  .active  > a,  
+#header .navbar-inverse .navbar-nav  .active  > a:focus, 
+#header .navbar-nav.navbar-right li > a:hover,
+.navbar-inverse .navbar-nav > .open > a{
+  color:#d63d34;
+  border-color:#d63d34;
+}
+
+#header .navbar-inverse .navbar-nav .dropdown-menu > li:hover {
+  border-bottom: 1px solid #d63d34;
+}
+
+.dropdown-menu {
+  border-top: 3px solid #d63d34;
+}
+
+.carousel-indicators .active{
+  background-color: #d63d34 !important;
+}
+
+#home-carousel .carousel-inner h2 span{
+  color:#d63d34;
+}
+
+#home-carousel .carousel-left:hover,
+#home-carousel .carousel-right:hover,
+#respond input:focus, #respond textarea:focus{
+  border-color: #d63d34;
+}
+
+.features-nav  .media i:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d63d34;
+}
+
+.features-nav .active .media i, 
+.features-nav li:hover  .media i {
+  background-color: #d63d34;
+  border-color: #d63d34;
+}
+
+#portfolio .portfolio-filter li .active{
+  border: 1px solid #d63d34;
+  color: #d63d34;
+}
+
+#portfolio .portfolio-filter li a:hover, 
+#portfolio .portfolio-filter li a:focus,
+#portfolio .portfolio-filter li a:active {
+  color: #d63d34;
+}
+
+.mask i {
+  border: 1px solid #d63d34;
+  color: #d63d34;
+}
+
+.mask i:hover{
+  background-color:#d63d34;  
+}
+
+.carousel-left:hover, 
+.carousel-right:hover {
+  background: #d63d34;
+}
+
+.carousel-left, 
+.carousel-right {
+  border: 1px solid #d63d34;
+  color: #d63d34;
+}
+
+#team-member-carousel .team-member:hover{
+  background-color: #d63d34;
+}
+
+#our-team .carousel-left:hover,
+#our-team .carousel-right:hover{
+  border: 1px solid #d63d34;;
+}
+
+.testimonial p span{
+  color:#d63d34;
+}
+
+.single-blog .date {
+  background: none repeat scroll 0 0 #d63d34;
+}
+
+#contact-wrap .btn-primary {
+  background: #d63d34;
+}
+
+#contact-wrap .form-control:focus {
+  border-color: #d63d34;
+}
+
+#footer a {
+  color:#d63d34;
+}
+
+#footer {
+    font-family:"Roboto" !important;
+}
+
+.btn-readmore{
+  background-color: #d63d34;
+}
+
+.carousel-blog-control {
+  background: #d63d34;
+}
+
+.btn-reply:hover{
+  background:#d63d34;
+}
+
+.btn-send, .blog-content .date{
+  background: #d63d34;
+  }
+  
+
+.replay-box form span input:focus, 
+.replay-box form textarea:focus{
+	border-color: #d63d34;
+}  
+
+.pagination-lg li a:hover {
+  background-color: #d63d34;
+}
+
+.pagination  .active  a, 
+.pagination  .active  span, 
+.pagination  .active  a:hover, 
+.pagination  .active  span:hover, 
+.pagination  .active  a:focus, 
+.pagination  .active  span:focus {
+  background-color: #d63d34;
+}
+
+.btn-search, .btn-plan,
+.load-wrap .load-more{
+  background: #d63d34;
+}
+
+.blog_category li a:hover, 
+.blog_category li a:focus,
+.single-blog-content h2 a:hover,
+.single-blog-content .post-meta li a:hover{
+	color: #d63d34;
+}
+
+ul.plan:hover {
+  border-color: #d63d34;
+}
+
+ul.plan:hover .plan-name {
+  background: #d63d34;
+}
+
+ul.plan:hover .plan-price {
+  border-color: #d63d34 ;
+}
+
+.tag-cloud li a:hover, .tag-cloud li a:focus {
+  background-color: #d63d34;
+}
+
+.portfolio-prev:hover, 
+.portfolio-next:hover {
+  background:#d63d34;
+  border-color:#d63d34;
+}
+
+.client-carousel-left:hover,  
+.client-carousel-right:hover,
+.client-carousel-left:focus,  
+.client-carousel-right:focus {
+  background:#d63d34;
+  border-color:#d63d34;
+}
+
+.single-carousel-right, 
+.single-carousel-left {
+  background:#d63d34;
+  border: 1px solid #d63d34;
+}
+
+.search_box:focus{
+  border-color: #d63d34;
+}
+
+.widget ul li a:hover {
+color: #d63d34;
+}
+
+.widget .tagcloud a:hover,
+.btn-style,
+#comments .form-submit #submit{
+  background-color: #d63d34;
+}
+
+.btn-reply:hover {
+background: #d63d34;
+}
+
+.btn {
+    font-family: "Roboto";
+}
+
+.btn-transparent {
+    color:white;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #d63d34;
+    border-color: #d63d34;
+}
+
+.btn-primary:hover {
+    color: #d63d34;
+    background-color: #ffffff;
+    border-color: #d63d34;
+}
+
+.plan-name span, .plan-price span, .btn-search, .btn-plan, input.btn.btn-primary {
+    font-family: "Roboto" !important;
+}
+
+#vod {
+    color: #ffffff !important;
+    background: #000000;
+    background: -moz-linear-gradient(top, #000000 0%, #262626 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #000000), color-stop(100%, #262626));
+    background: -webkit-linear-gradient(top, #000000 0%, #262626 100%);
+    background: -o-linear-gradient(top, #000000 0%, #262626 100%);
+    background: -ms-linear-gradient(top, #000000 0%, #262626 100%);
+    background: linear-gradient(to bottom, #000000 0%, #262626 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#262626', GradientType=0 );
+    padding-bottom: 0px;
+}
+
+
+@media (max-width: 767px) { 
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li.active > a, 
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li.active > a:focus, 
+  #header .navbar-inverse .navbar-nav .dropdown-menu > li > a:hover {
+    border-left: 2px solid #d63d34;
+  }
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:active {
+    background-color: #d63d34;
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+#header .navbar-nav.navbar-right >li a {
+    color: #666666;
+}
+
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #header .navbar-nav.navbar-right >li a {
+    color: #666666;
+}
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+        #header .navbar-nav.navbar-right >li a {
+    color: #666666;
+}
+}
+
+/* mobile landscape */
+
+@media (min-width: 481px) and (max-width: 767px) {
+        #header .navbar-nav.navbar-right >li a {
+    color: #EEEEEE;
+}
+}
+/* xs */
+@media (max-width: 767px) {
+        #header .navbar-nav.navbar-right >li a {
+    color: #EEEEEE;
+}
+}
+
