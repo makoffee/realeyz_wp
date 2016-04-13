@@ -1,39 +1,17 @@
 <?php
 /*
- * Template Name: Frontpage
+ * Template Name: Flexable no-sidebar
  */
 get_header();
 ?>
 <?php
-	$current_page_id = get_option('page_on_front'); // get front page id
-
-	// checking menu exist in location "primary"
-	if(  ( $locations = get_nav_menu_locations() ) && $locations['primary'] )
-	{
-		$menu 			= wp_get_nav_menu_object( $locations['primary'] );
-		$menu_items 	= wp_get_nav_menu_items( $menu->term_id );
-
-		$post_ids = array();
-		foreach ($menu_items as $items) {
-			if($items->object == 'page'){
-				$post_ids[] = $items->object_id;
-			}
-		}
-
-		$args = array( 'post_type' => 'page', 'post__in' => $post_ids, 'posts_per_page' => count( $post_ids ), 'orderby' => 'post__in' );
-	}
-	else
-	{
-		$args = array( 'post_type' => 'page');
-	}
-
+	$args = array( 'post_type' => 'page');
 	$allPosts = new WP_Query( $args ); // get pages on menu
-
 	$parallaxId = array();
 
 	if (have_posts()) {
 		// Start the Loop.
-		while ( $allPosts->have_posts() ) { $allPosts->the_post();
+		while ( have_posts() ) { the_post();
 			// set global $post
 			global $post;
 
@@ -59,7 +37,7 @@ get_header();
 			{
 				if( $page_section == 'default' ){		// Default Content Page
 				?>
-					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
+					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>); background-size:cover; background-position: top center;'<?php endif; ?>>
 						<?php if( $no_title != 1 ){ ?>
 							<div class="clearfix title-wrap">
                                 <h2 class="title <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	

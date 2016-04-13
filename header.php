@@ -16,7 +16,9 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
+	<script type="text/javascript" src="http://cdn.cleeng.com/js-api/3.0/api.js"></script>
 	<?php wp_head(); ?>
+	<meta name="google-site-verification" content="C-MKcyCrXIuvy4_vWJq39Kc2MGP31_jr5pRBPASmoEE" />
 </head>
 
 <body <?php body_class() ?>>
@@ -24,7 +26,7 @@
 
 		<header id="header" class="site-header" role="banner">      
 	        <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
-	            <div class="container">
+	            <div class="container-wide">
 	                <div class="navbar-header">
 	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	                        <span class="sr-only">Toggle navigation</span>
@@ -65,7 +67,7 @@
 							<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false,'menu_class' => 'nav navbar-nav navbar-left', 'walker' => new Onepage_Walker()) ); ?>
 						<?php endif; ?>
 						<?php if(has_nav_menu('secondary')): ?>
-							<?php wp_nav_menu( array( 'theme_location' => 'secondary','container' => false,'menu_class' => 'navbar-right', 'walker' => new Onepage_Walker()) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'secondary','container' => false,'menu_class' => 'nav navbar-nav navbar-right navbar-login', 'walker' => new Onepage_Walker()) ); ?>
 						<?php endif; ?>
 	                </div>
 	                <div class="login-widget">

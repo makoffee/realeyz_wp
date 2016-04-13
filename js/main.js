@@ -69,5 +69,6 @@ jQuery(document).ready(function($){'use strict';
 	$(window).resize(function () { 
 			blogPostHeight();			
 	});
+	$( "#qtranxs_select_qtranslate-2-chooser" ).addClass( "form-control col-xs-4" );
 
 });

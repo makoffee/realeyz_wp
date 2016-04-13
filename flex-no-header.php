@@ -1,39 +1,41 @@
 <?php
 /*
- * Template Name: Frontpage
+ * Template Name: Flexable no-header
  */
-get_header();
-?>
+ ?>
+<?php global $themeum; ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+	<?php if(isset($themeum['favicon'])){ ?>
+		<link rel="shortcut icon" href="<?php echo $themeum['favicon']; ?>" type="image/x-icon"/>
+	<?php }else{ ?>
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/images/plus.png' ?>" type="image/x-icon"/>
+	<?php } ?>
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="http://cdn.cleeng.com/js-api/3.0/api.js"></script>
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class() ?>
+	<div id="page" class="hfeed site">
 <?php
-	$current_page_id = get_option('page_on_front'); // get front page id
-
-	// checking menu exist in location "primary"
-	if(  ( $locations = get_nav_menu_locations() ) && $locations['primary'] )
-	{
-		$menu 			= wp_get_nav_menu_object( $locations['primary'] );
-		$menu_items 	= wp_get_nav_menu_items( $menu->term_id );
-
-		$post_ids = array();
-		foreach ($menu_items as $items) {
-			if($items->object == 'page'){
-				$post_ids[] = $items->object_id;
-			}
-		}
-
-		$args = array( 'post_type' => 'page', 'post__in' => $post_ids, 'posts_per_page' => count( $post_ids ), 'orderby' => 'post__in' );
-	}
-	else
-	{
-		$args = array( 'post_type' => 'page');
-	}
-
+	$args = array( 'post_type' => 'page');
 	$allPosts = new WP_Query( $args ); // get pages on menu
-
 	$parallaxId = array();
 
 	if (have_posts()) {
 		// Start the Loop.
-		while ( $allPosts->have_posts() ) { $allPosts->the_post();
+		while ( have_posts() ) { the_post();
 			// set global $post
 			global $post;
 
@@ -50,7 +52,7 @@ get_header();
 			$pad_class = '';
 
 			if($remove_pad != 1){
-				$pad_class = 'page-wrapper ';
+				$pad_class = '';
 			}
 
 			$postId = get_the_ID();

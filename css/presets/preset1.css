@@ -34,13 +34,13 @@ body {
 }
 
 h1, h2, h3 {
-	font-family: 'cooperhewitt-thin', sans-serif;
+	font-family: 'cooperhewitt-light', sans-serif;
 	font-weight: normal;
 }
 
 h4, h5, h6 {
-	font-family: 'cooperhewitt-book', sans-serif;
-	font-weight: lighter;
+	font-family: 'cooperhewitt-light', sans-serif;
+	font-weight: normal;
 }
 
 .brand {
@@ -217,7 +217,9 @@ a,a:hover,
   color:#06a0c6;
 }
 
-
+.btn-lg {
+    padding-bottom:5px !important;
+}
 
 .btn-readmore {
   background-color: #06a0c6;
@@ -380,7 +382,8 @@ background: #06a0c6;
 }
 
 .btn {
-    font-family: "Roboto";
+    font-family: "cooperhewitt-book";
+    padding-bottom: 2px;
 }
 
 .btn-transparent {
@@ -389,16 +392,72 @@ background: #06a0c6;
 
 .btn-primary {
     color: #fff;
-    background-color: #06a0c6;
+    background: #06a0c6;
     border-color: #06a0c6;
 }
 
 .btn-primary:hover {
     color: #06a0c6;
-    background-color: #ffffff;
+    background: #ffffff;
+    border-color: #ffffff;
+}
+.btn-transparent.btn-primary {
+    color: #06a0c6 !important;
+    background: rgba(0, 0, 0, 0);
     border-color: #06a0c6;
 }
 
+.btn-transparent.btn-primary:hover, .btn-transparent.btn-primary:active, .btn-transparent.btn-primary:focus {
+    color: #ffffff !important;
+    background: #06a0c6 !important;
+    border-color: #06a0c6 !important;
+}
+
+.btn-success {
+    color: #fff;
+    background: #4cae4c;
+    border-color: #4cae4c;
+}
+
+.btn-transparent.btn-success {
+    color: #4cae4c !important;
+    background: rgba(0, 0, 0, 0);
+    border-color: #4cae4c;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success:focus {
+    color: #FFFFFF !important;
+    background: #4cae4c !important;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success:focus {
+    color: #4cae4c;
+    background: rgba(0, 0, 0, 0);
+    border-color: #4cae4c;
+}
+
+.btn-info {
+    color: #fff;
+    background: #333333;
+    border-color: #333333;
+}
+
+.btn-transparent.btn-info {
+    color: #333333 !important;
+    background: rgba(0, 0, 0, 0);
+    border-color: #333333;
+}
+
+.btn-info:hover, .btn-info:active, .btn-info:focus {
+    color: #FFFFFF !important;
+    background: #333333 !important;
+}
+
+.btn-info:hover, .btn-infos:active, .btn-info:focus {
+    color: #4cae4c;
+    background: rgba(0, 0, 0, 0);
+    border-color: #333333;
+}
 
 @media (max-width: 767px) { 
   #header .navbar-inverse .navbar-nav .dropdown-menu > li.active > a, 

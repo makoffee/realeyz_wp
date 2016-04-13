@@ -51,8 +51,8 @@ if (isset($themeum))
 
 	#header .navbar-nav.navbar-right >li a{
 		font-family: "cooperhewitt-book";
-		font-weight: lighter;
-		font-size: <?php echo $themeum['menu_font_style']['size']; ?>;
+		font-weight: normal;
+		font-size: .8em; ?>;
 	}
 
 	<?php

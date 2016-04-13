@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Single Page - No sidebar
+ * Template Name: Category display
  */
 get_header(); 
 
@@ -10,14 +10,14 @@ get_header();
         $image = $image[0]; ?>
         <div id="hero" class="page-wrapper" style="background-image: url('<?php echo $image; ?>');" >
             <div class="clearfix title-wrap white container">
-                <h1 class="entry-title theline"><span><?php the_title(); ?></span></h1>
+                <h1 class="entry-title"><span><?php the_title(); ?></span></h1>
             </div>
         </div>
     <?php endif; ?>
     
-    <section id="main" class="clearfix">
-        <div id="page" class="container">
-            <div id="content" class="site-content col-md-12" role="main">
+    <section id="" class="clearfix" style="background:#000000;">
+        <div id="page" class="">
+            <div id="content" class="site-content" role="main">
                 <?php /* The loop */ ?>
                 <?php while ( have_posts() ): the_post(); ?>
 
@@ -28,16 +28,25 @@ get_header();
             </div>
         </div>
     <?php endif; ?>
-<p>no-title: <?php the_field('thm_no_title'); ?></p>
-                        <div class="entry-content">
-                            <?php the_content(); ?>
-                            <?php wp_link_pages(); ?>
-                        </div>
+
+<?php
+if (is_category('genres')) 
+{
+$args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
+$header_thumbs = get_posts( $args ); 
+}
+if( $header_thumbs ) :
+  foreach( $header_thumbs as $header_thumb ) {
+  setup_postdata($header_thumb);
+  echo '<div class="col-xs-6 col-sm-4 no-padding"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay"><h3 class="entry-title white text-center"><span class="over-under">'. get_the_title($header_thumb->ID) . '</span></h3></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive"></div>';
+  }
+endif;
+?>
 
                     </article>
 
                     <?php // comment_template(); ?>
-
+                
                 <?php endwhile; ?>
             </div> <!--/#content-->
 

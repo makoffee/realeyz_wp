@@ -3,15 +3,11 @@
 </header>
 
 <div class="page-content">
-    <?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
+    <?php if ( is_search() ) { ?>
 
-    <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'themeum' ), admin_url( 'post-new.php' ) ); ?></p>
-
-    <?php } elseif ( is_search() ) { ?>
-
-    <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'themeum' ); ?></p>
+    <p><?php _e( 'Oops Sorry, but nothing matched your search terms. Please try again with different keywords.', 'themeum' ); ?></p>
     <?php get_search_form(); ?>
-
+    <?php relevanssi_didyoumean(get_search_query(), "<p>Did you mean: ", "?</p>", 5); ?>
     <?php } else { ?>
 
     <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'themeum' ); ?></p>

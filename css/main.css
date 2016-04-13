@@ -44,6 +44,7 @@ h2.title {
 }
 
 .btn-transparent{
+    color:white;
 	background: rgba(0, 0, 0, 0);
 }
 
@@ -236,8 +237,15 @@ h2.title {
 	margin: 0;
 }
 
+
+#header .navbar-nav.navbar-right.navbar-login >li a {
+    line-height: 47px;
+    
+}
+
 #header .navbar-nav.navbar-right >li {
-	padding: 0 23px;
+	padding: 0;
+	
 }
 
 #header .navbar-nav.navbar-right >li:first-child{
@@ -250,11 +258,11 @@ h2.title {
 
 #header .navbar-nav.navbar-right >li a {
 	color: #FFFFFF;
-	font-size: 16px;
+	font-size: .8em;
 	line-height: 46px;
-	padding: 15px 0;
+	padding: 17px 0px 12px 0px;
 	text-transform: capitalize;
-	font-weight:lighter;
+	font-weight:normal;
 	border-bottom: 3px solid transparent;
 }
 
@@ -272,11 +280,11 @@ h2.title {
 
 #header .navbar-nav.navbar-left >li a {
 	color: #FFFFFF;
-	font-size: 16px;
+	font-size: .8em;
 	line-height: 46px;
-	padding: 15px 0;
+	padding: 17px 0px 12px 0px;
 	text-transform: capitalize;
-	font-weight:lighter;
+	font-weight:normal;
 	border-bottom: 3px solid transparent;
 }
 
@@ -1636,7 +1644,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 #footer .subtext {
   color: #666666;
-  font-size: .85em;
+  font-size: .67em;
+  line-height: 1em;
 }
 
 #footer p {
@@ -1647,6 +1656,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
   font-weight: 100
 }
 
+.footer-brand { 
+    margin-bottom:40px;
+}
+
+.footer-block {
+    margin-bottom:40px;
+}
 
 @media (min-width: 768px) and (max-width: 960px){
 	#navigation .navbar-nav > li > a {
@@ -3130,3 +3146,4 @@ font-weight:500
 #gmap-wrap #map{
 background:none;
 }
+

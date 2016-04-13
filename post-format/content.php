@@ -26,6 +26,7 @@
     				<span class="post-type"><i class="fa fa-picture-o"></i><span>Image Post</span></span>
     			</div>
             <?php } else{ //.entry-thumbnail ?>
+	<?php get_the_image( array( 'scan' => true ) ); ?>
                 <div class="no-image">
                     <span class="date"><?php the_time('M'); ?><span><?php the_time('d'); ?></span></span>
                 </div>

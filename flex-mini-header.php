@@ -1,39 +1,83 @@
 <?php
 /*
- * Template Name: Frontpage
+ * Template Name: Flexable mini-header
  */
-get_header();
-?>
+ ?>
+<?php global $themeum; ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<?php global $themeum; ?>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+	<?php if(isset($themeum['favicon'])){ ?>
+		<link rel="shortcut icon" href="<?php echo $themeum['favicon']; ?>" type="image/x-icon"/>
+	<?php }else{ ?>
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/images/plus.png' ?>" type="image/x-icon"/>
+	<?php } ?>
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="http://cdn.cleeng.com/js-api/3.0/api.js"></script>
+	<?php wp_head(); ?>
+	<meta name="google-site-verification" content="C-MKcyCrXIuvy4_vWJq39Kc2MGP31_jr5pRBPASmoEE" />
+</head>
+
+<body <?php body_class() ?>>
+<div id="page" class="hfeed site">
+		<header id="header" class="site-header" role="banner">      
+	        <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
+	            <div class="container-wide">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+
+	                    <a class="navbar-brand" href="<?php echo site_url(); ?>"><h1 class="logo-wrapper">
+	                    	<?php
+								if (isset($themeum['logo']))
+							   {
+							   		
+									if($themeum['logo_text_en']) {
+										echo $themeum['logo_text'];
+									}
+									else
+									{
+										if(!empty($themeum['logo'])) {
+										?>
+											<img class="enter-logo" src="<?php echo $themeum['logo']; ?>" title="">
+										<?php
+										}else{
+											echo get_bloginfo('name');
+										}
+									}
+							   }
+								else
+							   {
+							    	echo get_bloginfo('name');
+							   }
+							?>
+	                    </h1></a>
+	                    
+	                </div>
+	            </div>
+	        </div>
+	    </header>
 <?php
-	$current_page_id = get_option('page_on_front'); // get front page id
-
-	// checking menu exist in location "primary"
-	if(  ( $locations = get_nav_menu_locations() ) && $locations['primary'] )
-	{
-		$menu 			= wp_get_nav_menu_object( $locations['primary'] );
-		$menu_items 	= wp_get_nav_menu_items( $menu->term_id );
-
-		$post_ids = array();
-		foreach ($menu_items as $items) {
-			if($items->object == 'page'){
-				$post_ids[] = $items->object_id;
-			}
-		}
-
-		$args = array( 'post_type' => 'page', 'post__in' => $post_ids, 'posts_per_page' => count( $post_ids ), 'orderby' => 'post__in' );
-	}
-	else
-	{
-		$args = array( 'post_type' => 'page');
-	}
-
+	$args = array( 'post_type' => 'page');
 	$allPosts = new WP_Query( $args ); // get pages on menu
-
 	$parallaxId = array();
 
 	if (have_posts()) {
 		// Start the Loop.
-		while ( $allPosts->have_posts() ) { $allPosts->the_post();
+		while ( have_posts() ) { the_post();
 			// set global $post
 			global $post;
 
@@ -50,7 +94,7 @@ get_header();
 			$pad_class = '';
 
 			if($remove_pad != 1){
-				$pad_class = 'page-wrapper ';
+				$pad_class = '';
 			}
 
 			$postId = get_the_ID();
@@ -59,13 +103,15 @@ get_header();
 			{
 				if( $page_section == 'default' ){		// Default Content Page
 				?>
-					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
+		            
+					<div id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
 						<?php if( $no_title != 1 ){ ?>
 							<div class="clearfix title-wrap">
                                 <h2 class="title <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
                     <?php if($page_title != '') { echo $page_title; }else{ echo get_the_title(); } ?> </h2>
 							</div>
 						<?php }?>
+				    <section id="main" class="container">     
 						<div class="container page-content <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">
 							<?php echo do_shortcode(get_the_content()); ?>
 						</div> <!-- .container -->
@@ -75,7 +121,7 @@ get_header();
 				elseif( $page_section == 'full' )
 				{
 				?>
-					<div id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>full-width clearfix"<?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
+					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>full-width clearfix"<?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
 						<?php if( $no_title != 1 ){ ?>
 							<div class="clearfix title-wrap">
 							   <h2 class="title <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
@@ -85,7 +131,7 @@ get_header();
 						<div class="page-fullwdth-content <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
 								<?php echo do_shortcode(get_the_content()); ?>
 						</div> <!-- .page-fullwdth-content -->
-					</div> <!-- .page-content -->
+					</section> <!-- .page-content -->
 				<?php
 				}
 				else
@@ -137,5 +183,4 @@ get_header();
 	}
 
 ?>
-
 <?php get_footer(); ?>

@@ -510,22 +510,27 @@ a img.aligncenter {
 	display: block;
 }
 
-.widget .tagcloud a{
-	background-color: #CCC;
-	border: 0 none;
-	color:#fff;
-	border-radius: 0;
-	font-size: 14px !important;
-	font-weight: 300;
-	padding: 4px 5px;
-	transition:all 300ms linear;
-	display: inline-block;
-	margin-bottom: 10px;
-	margin-right: 8px;
+.widget .tagcloud a {
+    background-color: #888888;
+    border: 0 none;
+    color: #fff;
+    border-radius: 0;
+    font-size: .75em !important;
+    font-weight: 300;
+    padding: 3px 9px 0px 9px;
+    transition: all 300ms linear;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    border-radius: 15px;
+    text-transform: lowercase;
+    text-decoration:none;
 }
 
-.widget .tagcloud a:hover{
-	background-color: #7AB700;
+.widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active{
+	background-color: #333333 !important;
+	color:#06A0C6 !important;
+	text-decoration:none;
 }
 
 .widget ul{
@@ -589,7 +594,7 @@ a img.aligncenter {
 #footer .widget ul li{
 	border-bottom: none;
 	padding: 0px;
-	line-height: 20px;
+	line-height: 26px;
 }
 
 #footer .widget ul li:before{
@@ -598,7 +603,8 @@ a img.aligncenter {
 
 #footer .widget ul li a { 
 	color:#CCCCCC !important;
-	font-size:14px !important;
+	font-size: .9em !important;
+    text-transform: uppercase;
 }
 
 #footer .widget ul li a:hover  { 
@@ -664,7 +670,7 @@ a img.aligncenter {
     background: -ms-linear-gradient(top, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
-    margin-bottom:40px;    
+    margin-bottom:80px;    
 }
     
 .plan2 {
@@ -678,7 +684,7 @@ a img.aligncenter {
     background: -ms-linear-gradient(top, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
-    margin-bottom:40px;    
+    margin-bottom:80px;    
 }
     
 .plan3 {
@@ -692,18 +698,35 @@ a img.aligncenter {
     background: -ms-linear-gradient(top, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 50%, #ffffff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
-    margin-bottom:40px;
+    margin-bottom:80px;
 }
 
 .plan ul{
 margin-bottom:40px;
 margin-top:20px;
+padding-left:15px;
 }
 
 .plan li{
 line-height:1.8em;
 }
-    
+
+.plan {
+    padding-top:20px;
+}
+
+.plan1 .fa-li {
+color:#06a0c6;
+}
+
+.plan2 .fa-li {
+color:#04d361;
+}
+
+.plan3 .fa-li {
+color:#333333;
+}
+
 #filmcovers {
     color: #ffffff !important;
 background: #000000;
@@ -731,14 +754,233 @@ color:#333333 !important;
 color:#FFFFFF !important;
 }
 
-.zoom-social-icons-widget {
-    float:right;
-    padding-bottom:20px;
-}
 
 .no-margin {
 margin:0px;
 }
 .no-padding {
 padding:0px;
+} 
+
+.qtranxs_widget {
+text-align:right;
+margin-bottom:10px;
 }
+
+ul.qtrans_language_chooser {
+    width:100%;
+    padding:0px;
+    margin:0;
+    list-style-type:none;
+    position:absolute;
+    top: 106px;
+    z-index:201;
+} 
+
+ul.qtrans_language_chooser a {
+    float:right;
+    width:20px;
+    height: 12px;
+    margin:0 2px;
+    display:inline;
+    z-index:201;
+} 
+
+
+
+.dark-icon {
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: middle;
+    font-size:42px;
+    color:#111111;
+    text-shadow: 0px -1px #666666;
+}
+
+ul.qtrans_language_chooser > .active {
+display:none;
+} 
+
+@media (max-width: 979px) {
+
+    ul.qtrans_language_chooser {
+    top: 16px;
+      }
+}
+
+
+#lt_overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2001;
+    -moz-opacity: 0.4;
+    opacity: .40;
+    filter: alpha(opacity=60);
+}
+
+#lt_loading {
+    display: none;
+    position: fixed;
+    color: #fff;
+    opacity: .8;
+    top: 50%;
+    left: 50%;
+    margin-top: -122px;
+    margin-left: -42px;
+    padding: 1px;
+    z-index: 2002;
+    overflow: auto;
+}
+
+#footer-cta {
+    background-position:center top;
+    background-size:cover;
+}
+#coverflow {
+background: #FFFFFF;
+background: -moz-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #cccccc), color-stop(14%, #ffffff), color-stop(51%, #ffffff), color-stop(87%, #ffffff), color-stop(100%, #cccccc));
+background: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
+background: -o-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
+background: -ms-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
+background: linear-gradient(to bottom, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc', GradientType=0 );
+}
+
+#coverflow img {
+-webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 2, 0.28);
+-moz-box-shadow:    0px 0px 18px 0px rgba(0, 0, 2, 0.28);
+box-shadow:         0px 0px 18px 0px rgba(0, 0, 2, 0.28);
+}
+
+.theline span:before, .theline span:after {
+  content: "";
+  position: absolute;
+  border-top: 1px solid #ccc;
+  width: 400%;
+  top: 50%;
+}
+
+div .theline span:before, div.theline span:after {
+  border-top: 1px solid white;
+}
+
+
+.theline {
+  overflow: hidden;
+  text-align: center;
+}
+
+.theline span {
+  position: relative;
+}
+
+.theline span:before {
+  right: 100%;
+  margin-right: .25em;
+}
+
+.theline span:after {
+  left: 100%;
+  margin-left: .25em;
+}
+
+.over-under {
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: white;
+  padding-top:10px;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex; /* add */
+    justify-content: center; /* add to align horizontal */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.img-overlay-dark {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex; /* add */
+    justify-content: center; /* add to align horizontal */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* need a nice banner for single pages */
+
+#hero {
+    background-size:cover; background-position:center center; padding-top:180px; padding-bottom:160px;
+    }
+    
+/* make that header wide baby */
+.container-wide {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.container-wide:before,
+.container-wide:after {
+    display: table;
+    content: " "
+}
+
+.container-wide:after {
+    clear: both
+}
+
+.container-wide:before,
+.container-wide:after {
+    display: table;
+    content: " "
+}
+
+.container-wide:after {
+    clear: both
+}
+
+@media(min-width:768px) {
+    .container-wide {
+        width: 100%;
+    }
+}
+
+@media(min-width:992px) {
+    .container-wide {
+        width: 100%;
+    }
+}
+
+@media(min-width:1200px) {
+    .container-wide {
+        width: 100%;
+    }
+}
+
+#menu-item-460, #menu-item-22732, #menu-item-459, #menu-item-458, #menu-item-1261 {
+display:none;
+}
+
+/* time for some fancy zoom */
+
+.category-display {overflow:hidden;}
+.category-display h3, .img-overlay, .img-overlay-dark {z-index:1000;}
+.img-category, .zoomin { transition: all .3s ease-out;}
+.zoomin:hover .img-category { transform: scale(1.1);}
+.zomein:hover .img-overlay, .zomein:hover .img-overlay-dark {background-color: rgba(0, 0, 0, 0.8);} 

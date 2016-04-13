@@ -4469,7 +4469,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-brand {
     float: left;
-    padding: 15px 15px;
+    padding: 16px 15px 16px 0px;
     font-size: 18px;
     line-height: 20px
 }
@@ -4561,7 +4561,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
         padding-bottom: 15px
     }
     .navbar-nav.navbar-right:last-child {
-        margin-right: -15px
+       /* margin-right: -15px */
     }
 }
 

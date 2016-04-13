@@ -86,16 +86,6 @@ if(!function_exists('thmtheme_widdget_init')):
 							  	'after_widget' 	=> '</div>'
 					)
 		);
-
-		register_sidebar(array( 'name' 			=> __( 'Bottom', 'themeum' ),
-							  	'id' 			=> 'bottom',
-							  	'description' 	=> __( 'Widgets in this area will be shown in the bottem above the footer.' , 'themeum'),
-							  	'before_title' 	=> '<h3 class="widget_title">',
-							  	'after_title' 	=> '</h3>',
-							  	'before_widget' => '<div class="col-sm-3 col-xs-6 bottom-widget"><div id="%1$s" class="widget %2$s" >',
-							  	'after_widget' 	=> '</div></div>'
-				)
-		);
 		
 		// some shit i found on the internet (sorry baby jesus, I didn't mean to make you cry).
 		register_sidebar( array(
@@ -666,138 +656,8 @@ if(!function_exists('the_excerpt_max_charlength')){
 }
 
 // Add Google Map Script
+// I took it out and addeded it to gmaps.php
 
-function enter_google_map()
-{
-	global $themeum;
-
-	global $post;
-	ob_start();
-
-		if (isset($themeum)) {
-			$lat 		= (isset($themeum['map_lat']))?$themeum['map_lat']:'';
-			$lng 		= (isset($themeum['map_log']))?$themeum['map_log']:'';
-			$zoom 		= (isset($themeum['map_zoom']))?$themeum['map_zoom']:'';
-			$map_logo 	= (isset($themeum['map_logo']))?$themeum['map_logo']:'';
-
-			if ($map_logo !='') {
-				$map_logo = $map_logo;
-			} else {
-				$map_logo = get_template_directory_uri()."/images/map-icon.png";
-			}
-		?>
-			<script type="text/javascript">
-				(function(){
-
-					var map;
-
-					map = new GMaps({
-						el: '#gmap',
-						lat: <?php echo $lat; ?>,
-						lng: <?php echo $lng; ?>,
-						scrollwheel:false,
-						zoom: <?php echo $zoom; ?>,
-						zoomControl : false,
-						panControl : false,
-						streetViewControl : false,
-						mapTypeControl: false,
-						overviewMapControl: false,
-						clickable: false
-					});
-
-					
-					map.addMarker({
-						lat: <?php echo $lat; ?>,
-						lng: <?php echo $lng; ?>,
-						icon: "<?php echo $map_logo; ?>",
-						animation: google.maps.Animation.DROP,
-						verticalAlign: 'bottom',
-						horizontalAlign: 'center',
-						<?php if(isset($themeum['map_address'])) {?>
-						infoWindow: {
-						  content: "<div><?php echo $themeum['map_address']; ?></div>"
-						}
-						<?php } ?>
-					});
-
-					<?php 
-						$road_color 	= '#b4b4b4';
-						$water_color 	= '#d8d8d8';
-						$land_color 	= '#f1f1f1';
-						$fill_color 	= '#000000';
-						$poi_color 		= '#d9d9d9';
-						$text_color 	= '#000000';
-
-						if ( isset($themeum['skin'] ) && ($themeum['skin'] == 'skin2')) {
-							$road_color 	= '#000000';
-							$water_color 	= '#333333';
-							$land_color 	= '#141414';
-							$fill_color 	= '#050505';
-							$poi_color 		= '#161616';
-							$text_color 	= '#7f8080';
-						}
-
-					?>
-
-
-					var styles = [ 
-
-					{
-						"featureType": "road",
-						"stylers": [
-						{ "color": "<?php echo $road_color; ?>" }
-						]
-					},{
-						"featureType": "water",
-						"stylers": [
-						{ "color": "<?php echo $water_color; ?>" }
-						]
-					},{
-						"featureType": "landscape",
-						"stylers": [
-						{ "color": "<?php echo $land_color; ?>" }
-						]
-					},{
-						"elementType": "labels.text.fill",
-						"stylers": [
-						{ "color": "<?php echo $fill_color; ?>" }
-						]
-					},{
-						"featureType": "poi",
-						"stylers": [
-						{ "color": "<?php echo $poi_color; ?>" }
-						]
-					},{
-						"elementType": "labels.text",
-						"stylers": [
-						{ "saturation": 1 },
-						{ "weight": 0.1 },
-						{ "color": "<?php echo $text_color; ?>" }
-						]
-					}
-
-					];
-
-					map.addStyle({
-						styledMapName:"Styled Map",
-						styles: styles,
-						mapTypeId: "map_style"  
-					});
-
-					map.setStyle("map_style");
-				}());
-			</script>
-		<?php
-		}
-
-
-	$output = ob_get_contents();
-	ob_end_clean();
-
-	echo $output;
-}
-
-add_action('wp_footer','enter_google_map',101);
 
 
 // Post View Count
@@ -818,4 +678,102 @@ function post_view_count($id){
 	}
 
 	return $count;
+}
+
+// Add SVG support.
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+// sets default featured images to select categories... oh la la
+
+function default_category_featured_image() {
+global $post;
+$featured_image_exists = has_post_thumbnail($post->ID);
+              
+if (!$featured_image_exists)  {
+$attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+
+if ($attached_image) {
+						  
+foreach ($attached_image as $attachment_id => $attachment) {
+set_post_thumbnail($post->ID, $attachment);
+}}
+else if ( in_category('55') ) {
+set_post_thumbnail($post->ID, '471');
+}
+else if ( in_category('56') ) {
+set_post_thumbnail($post->ID, '471');
+}
+else if ( in_category('57') ) {
+set_post_thumbnail($post->ID, '471');
+}
+//else {
+//set_post_thumbnail($post->ID, '40381');
+//wp_reset_postdata();
+					//		   }
+							   
+                           }
+                        
+      }
+add_action('the_post', 'default_category_featured_image');
+
+## Hacky fix for qTranslate sorting ##
+
+add_filter( 'posts_clauses', 'qtrans_fix_clauses', 999, 2 );
+function qtrans_fix_clauses($clauses,$query){
+if(!is_admin()){
+global $q_config;
+$lang = $q_config['language'];
+if($query->query_vars['orderby'] == 'title'){
+$clauses['orderby'] = "SUBSTR(post_title, IF(LOCATE('<!--:".$lang."-->',post_title),LOCATE('<!--:".$lang."-->',post_title)+10, LOCATE('[:".$lang."]',post_title)+5),
+IF(LOCATE('<!--:".$lang."-->',post_title),LOCATE('<!--:-->',post_title,LOCATE('<!--:".$lang."-->',post_title)+10) - (LOCATE('<!--:".$lang."-->',post_title)+10),
+LOCATE('[:',post_title,LOCATE('[:".$lang."]',post_title)+5) - (LOCATE('[:".$lang."]',post_title)+5))) ".$query->query_vars['order'];
+}
+}
+return $clauses;
+}
+
+
+## auto add first image as featured image (fingers crossed) ##
+// this works by the way only for images attached to the post, so great for new posts but 
+
+function auto_featured_image() { global $post;  if (!has_post_thumbnail($post->ID)) { $attached_image = get_children( "post_parent=$post->ID&amp;post_type=attachment&amp;post_mime_type=image&amp;numberposts=1" );  if ($attached_image) { foreach ($attached_image as $attachment_id => $attachment) { set_post_thumbnail($post->ID, $attachment_id); } } } } 
+// Use it temporary to generate all featured images 
+//add_action('the_post', 'auto_featured_image'); 
+//// Used for new posts 
+//add_action('save_post', 'auto_featured_image'); 
+//add_action('draft_to_publish', 'auto_featured_image'); 
+//add_action('new_to_publish', 'auto_featured_image'); 
+//add_action('pending_to_publish', 'auto_featured_image'); 
+//add_action('future_to_publish', 'auto_featured_image');
+
+function gpi_find_image_id($post_id) {
+    if (!$img_id = get_post_thumbnail_id ($post_id)) {
+        $attachments = get_children(array(
+            'post_parent' => $post_id,
+            'post_type' => 'attachment',
+            'numberposts' => 1,
+            'post_mime_type' => 'image'
+        ));
+        if (is_array($attachments)) foreach ($attachments as $a)
+            $img_id = $a->ID;
+    }
+    if ($img_id)
+        return $img_id;
+    return false;
+}
+
+function find_img_src($post) {
+    if (!$img = gpi_find_image_id($post->ID))
+        if ($img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
+            $img = $matches[1][0];
+    if (is_int($img)) {
+        $img = wp_get_attachment_image_src($img);
+        $img = $img[0];
+    }
+    return $img;
 }
