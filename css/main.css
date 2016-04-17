@@ -232,7 +232,7 @@ h2.title {
 	margin-top: 20px;
 }
 
-#header .navbar-brand h1{
+#header .navbar- h1{
 	padding: 0;
 	margin: 0;
 }
@@ -1639,7 +1639,7 @@ background: -ms-linear-gradient(top, #000000 0%, #262626 100%);
 background: linear-gradient(to bottom, #000000 0%, #262626 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#262626', GradientType=0 );
   color: #CCCCCC;
-  padding: 40px 0px 80px 0px;
+  padding: 40px 0px 20px 0px;
   font-size: .8em;
 }
 #footer .subtext {
@@ -1656,7 +1656,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
   font-weight: 100
 }
 
-.footer-brand { 
+.footer-max-height: 420px !important; { 
     margin-bottom:40px;
 }
 
@@ -1690,7 +1690,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 		padding: 10px 0;
 	}
 
-	#navigation .navbar-brand{
+	#navigation .navbar-max-height: 420px !important;{
 		padding-top: 3px;
 		padding-bottom: 0px;
 	}
@@ -1710,7 +1710,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 @media(max-width: 479px){
 
-	#navigation .navbar-brand {
+	#navigation .navbar-max-height: 420px !important; {
 		margin-top: 5px;
 	}
 
@@ -2403,8 +2403,7 @@ ul.plan:hover .plan-price {
 
 
 .social-icons {
-	color: #FFFFFF;
-	padding: 6% 15% 0;
+	color: #000000;
 }
 
 .social-icons a i {
@@ -2439,7 +2438,7 @@ ul.plan:hover .plan-price {
 }
 
 .social-icons .fa-facebook {
-	padding: 13px 16px;
+
 }
 
 .social-icons .fa-facebook:hover {
@@ -2600,8 +2599,8 @@ div.wpcf7-mail-sent-ok{
 }
 
 .blog-content h3 a {
-  color: #000000;
-  font-size: 22px;
+
+
 }
 
 .blog-item .blog-content .post-content{

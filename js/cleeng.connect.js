@@ -35,6 +35,16 @@ CleenglogoutURL = "http://stream.realeyz.de/user/logout/";
 
 // test if user is logged
 
+function autologout() {
+        CleengApi.logout(function(result) {
+        if (result.success) {
+        return(true);
+        } else {
+        window.location = "http://www.realeyz.de/";
+        }
+        });
+}
+
 CleengApi.autologin(function(result) {
 
     if (result.success) {
@@ -44,6 +54,8 @@ CleengApi.autologin(function(result) {
     }
 
 });
+
+
 
 // subscription
 
@@ -64,6 +76,7 @@ CleengApi.autologin(function(result) {
 // login
     jQuery(".login, #menu-item-458 a").click(function() {
         showOverlay();
+        document.cookie="realeyzLoginTry=1; domain=realeyz.de";
         window.location = CleengLoginURL;
         return (false);
     });
@@ -80,5 +93,5 @@ CleengApi.autologin(function(result) {
         return (false);
     });
 
-}
+};
 

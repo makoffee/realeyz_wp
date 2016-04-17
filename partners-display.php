@@ -8,7 +8,7 @@ get_header();
 <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
         $image = $image[0]; ?>
-        <div id="hero" class="page-wrapper" style="background-image: url('<?php echo $image; ?>');" >
+        <div id="hero" style="background-image: url('<?php echo $image; ?>');" >
             <div class="clearfix title-wrap white container">
                 <h1 class="entry-title"><span><?php the_title(); ?></span></h1>
             </div>
@@ -39,7 +39,7 @@ $header_thumbs = get_posts('category_name=partners&posts_per_page=-1&order=DESC&
 if( $header_thumbs ) :
   foreach( $header_thumbs as $header_thumb ) {
   setup_postdata($header_thumb);
-  echo '<div class="col-xs-6 col-sm-4 no-padding"><a href="' . get_permalink($header_thumb->ID) . '"><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive"></div>';
+  echo '<div class="col-xs-6 col-sm-4 no-padding fadein-quick"><a href="' . get_permalink($header_thumb->ID) . '"><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive"></div>';
   }
 endif;
 ?>

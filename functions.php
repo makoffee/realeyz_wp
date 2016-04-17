@@ -45,7 +45,7 @@ if(!function_exists('thmtheme_setup')):
 
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'blog-large', 700, 365, true );
+		add_image_size( 'blog-large', 1920, 1080, true );
 		add_image_size( 'blog-mid', 943, 493, true );
 		add_image_size( 'blog-thumb', 199, 128, true );
 		add_image_size( 'team', 435, 393, true );
@@ -146,9 +146,8 @@ if(!function_exists('themeum_style')):
 
     function themeum_style(){
         wp_enqueue_style('thm-style',get_stylesheet_uri());
-        wp_enqueue_style('font-awesome',THMCSS.'font-awesome.min.css');
+        wp_enqueue_style('font-awesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
         wp_enqueue_style('resonsive',THMCSS.'responsive.css');
-
         wp_enqueue_script('jquery');
         wp_enqueue_script('bootstrap',THMJS.'bootstrap.min.js',array(),false,true);
         wp_enqueue_script('flexslider',THMJS.'jquery.flexslider.js',array(),false,true);
@@ -162,6 +161,8 @@ if(!function_exists('themeum_style')):
         /* wp_enqueue_script('gmaps',THMJS.'gmaps.js',array(),false,true); */
         wp_enqueue_script('main',THMJS.'main.js',array(),false,true);
         wp_enqueue_script('cleeng.connect',THMJS.'cleeng.connect.js',array(),false,true);
+        wp_enqueue_script('first-login',THMJS.'first-login.js',array(),false,true);
+        
         
 		global $themeum;
 
@@ -777,3 +778,11 @@ function find_img_src($post) {
     }
     return $img;
 }
+
+# stop wordpress from making my life into a living hell.
+
+#remove_filter( 'the_content', 'wpautop' );
+#remove_filter( 'the_excerpt', 'wpautop' );
+
+#add_filter( 'the_content', 'nl2br' );
+#add_filter( 'the_excerpt', 'nl2br' );

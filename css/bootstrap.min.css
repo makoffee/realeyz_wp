@@ -2598,8 +2598,8 @@ fieldset[disabled] .btn-link:focus {
 
 .btn-lg {
     padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.33;
+   font-size: 1.3em;
+  /* line-height: 1.33; */
     border-radius: 26px;
 }
 
@@ -4469,7 +4469,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-brand {
     float: left;
-    padding: 16px 15px 16px 0px;
+    padding: 6px 15px 11px 0px;
     font-size: 18px;
     line-height: 20px
 }

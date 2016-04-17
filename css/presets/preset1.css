@@ -25,12 +25,24 @@
        url('../../fonts/CooperHewitt-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'cooperhewitt-bold';
+  src: url('../../fonts/CooperHewitt-bold.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/CooperHewitt-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/CooperHewitt-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/CooperHewitt-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
 	font-family: 'cooperhewitt-book', sans-serif;
 	position: relative;
 	font-weight:lighter;
 	font-size:18px;
 	background: #fff;
+}
+
+b, strong {
+    font-family: 'cooperhewitt-book', sans-serif;
 }
 
 h1, h2, h3 {
@@ -218,7 +230,7 @@ a,a:hover,
 }
 
 .btn-lg {
-    padding-bottom:5px !important;
+ /*   padding-bottom:5px !important;  */
 }
 
 .btn-readmore {
@@ -401,6 +413,13 @@ background: #06a0c6;
     background: #ffffff;
     border-color: #ffffff;
 }
+
+.btn-primary.btn-square:hover {
+    color: #06a0c6;
+    background: #ffffff;
+    border-color: #06a0c6 !important;
+}
+
 .btn-transparent.btn-primary {
     color: #06a0c6 !important;
     background: rgba(0, 0, 0, 0);

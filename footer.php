@@ -2,14 +2,14 @@
 
     <footer id="footer">
         <div class="container-wide">
-            <div class="row">
+            <div class="row" style="padding-bottom:20px;">
                 <div class="col-xs-6">
                 <img src="http://realeyz.de/wp-content/uploads/realeyz_logo_darker.svg" class="footer-brand">
                 </div>
                 <div class="col-xs-6">
-                <div class="col-xs-6 col-md-8 col-sm-7 col-lg-9 text-right"><i class="fa fa-globe dark-icon"></i>
+                <div class="col-xs-6 col-md-8 col-sm-8 col-lg-9 text-right hidden-xs"><i class="fa fa-globe dark-icon"></i>
                 </div>
-                <div class="col-xs-6 col-md-4 col-sm-5 col-lg-3 pull-right no-margin no-padding">
+                <div class="col-xs-10 col-md-4 col-sm-4 col-lg-3 pull-right no-margin no-padding">
                 <?php
                 if(is_active_sidebar('footer-right')){
                 dynamic_sidebar('footer-right');
@@ -21,21 +21,21 @@
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
                 <div id="footer-links" class="secondary row">
-                <div id="footer-links1" class="col-lg-3 col-md-4 col-xs-4 footer-block">
+                <div id="footer-links1" class="col-lg-2 col-md-3 col-sm-2 col-xs-4 footer-block">
                 <?php
                 if(is_active_sidebar('footer-sidebar-1')){
                 dynamic_sidebar('footer-sidebar-1');
                 }
                 ?>
                 </div>
-                <div id="footer-links2" class="col-lg-3 col-md-4 col-xs-4 footer-block">
+                <div id="footer-links2" class="col-lg-2 col-md-3 col-sm-2 col-xs-4 footer-block">
                 <?php
                 if(is_active_sidebar('footer-sidebar-2')){
                 dynamic_sidebar('footer-sidebar-2');
                 }
                 ?>
                 </div>
-                <div id="footer-links3" class="col-lg-3 col-md-3 col-xs-4 footer-block">
+                <div id="footer-links3" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-block">
                 <?php
                 if(is_active_sidebar('footer-sidebar-3')){
                 dynamic_sidebar('footer-sidebar-3');
@@ -49,6 +49,10 @@
                 
                 <?php if(isset($themeum['footer_text_2'])) echo $themeum['footer_text_2']; ?>
                 </div>
+            </div>
+            <div class="row">
+            <hr>
+            <p class="text-right"><img src="http://realeyz.de/wp-content/uploads/CreativeEuropeMedia.png"></p>
             </div>
         </div>
     </footer>

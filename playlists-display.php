@@ -8,7 +8,7 @@ get_header();
 <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
         $image = $image[0]; ?>
-        <div id="hero" class="page-wrapper" style="background-image: url('<?php echo $image; ?>');" >
+        <div id="hero" style="background-image: url('<?php echo $image; ?>');" >
             <div class="clearfix title-wrap white container">
                 <h1 class="entry-title"><span><?php the_title(); ?></span></h1>
             </div>
@@ -41,8 +41,8 @@ if( $header_thumbs ) :
   setup_postdata($header_thumb);
   $no_title = get_post_meta($header_thumb->ID, 'thm_no_title', true );
   if( $no_title != 1 ){
-  echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay-dark"><h3 class="entry-title white text-center"><span class="over-under">'. get_the_title($header_thumb->ID) . '</span></h3></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';
-  } else {echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay"></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';}
+  echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay-dark"><h3 class="entry-title white text-center"><span class="over-under">'. get_the_title($header_thumb->ID) . '</span></h3></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';
+  } else {echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay"></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';}
   }
 endif;
 ?>
