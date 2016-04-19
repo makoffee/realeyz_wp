@@ -118,6 +118,9 @@ h1 {
 
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
+    
+
+
 
 h1 {
     font-size:2em !important;
@@ -352,7 +355,10 @@ h4 {
 /* xs */
 @media (max-width: 767px) {
 
-
+#hero {
+    padding-top: 112px;
+    padding-bottom: 41px;
+}
     
 .page-wrapper {
     padding: 40px 0px 40px 0px !important;
@@ -363,7 +369,7 @@ h4 {
     padding-bottom:20px;
 }
 
-body { font-size: 15px !important;
+body { font-size: 16px !important;
 }
 
 h1 {
@@ -379,7 +385,7 @@ h2 {
 }
 
 h3 {
-    font-size:1.2em !important;
+    font-size:1.3em !important;
 }
 
 h4 {
@@ -523,7 +529,8 @@ p {
   }
   
 #text-carousel video {
-      max-height: 420px !important;
+    width: auto;
+    max-height: 420px;
 }
 
     blog-item ,
@@ -937,6 +944,12 @@ p {
 }
 
 /* XS Portrait */
+
+#hero {
+    padding-top: 112px;
+    padding-bottom: 41px;
+}
+
 @media ( max-width: 480px) {
 
   .blog-content p{

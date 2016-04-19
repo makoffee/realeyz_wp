@@ -1,17 +1,15 @@
-<header class="page-header">
-    <h1 class="page-title"><?php _e( 'Nothing Found', 'themeum' ); ?></h1>
-</header>
-
 <div class="page-content">
     <?php if ( is_search() ) { ?>
 
-    <p><?php _e( 'Oops Sorry, but nothing matched your search terms. Please try again with different keywords.', 'themeum' ); ?></p>
+    <header class="page-header">
+    <h1 class="page-title"><?php _e( '[:de]Deine Suchanfrage erzielte keine Treffer[:]', 'themeum' ); ?></h1>
+    <p>didn't find what you were looking for?  Perhaps this can help:<p>
     <?php get_search_form(); ?>
-    <?php relevanssi_didyoumean(get_search_query(), "<p>Did you mean: ", "?</p>", 5); ?>
+    </header>
     <?php } else { ?>
-
-    <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'themeum' ); ?></p>
-    <?php get_search_form(); ?>
-
+    <header class="page-header">
+    <h1 class="page-title"><?php _e( '404: error<br>you know what you did', 'themeum' ); ?></h1>
+    <a href="https://realeyz.de/" class="btn btn-info">HOME PAGE</a> <a href="http://www.stream.realeyz.de/" class="btn btn-info">BACK TO BROWSE</a>
+    </header>
     <?php } ?>
 </div><!-- .page-content -->

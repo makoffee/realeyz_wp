@@ -24,11 +24,10 @@ get_header();
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php if ( has_post_thumbnail() == null ) : ?>
                     <div class="clearfix title-wrap container">
-                    <h2 class="entry-title theline"><span><?php the_title(); ?></span></h2>
+                    <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
             </div>
         </div>
     <?php endif; ?>
-<p>no-title: <?php the_field('thm_no_title'); ?></p>
                         <div class="entry-content">
                             <?php the_content(); ?>
                             <?php wp_link_pages(); ?>
@@ -41,7 +40,6 @@ get_header();
                 <?php endwhile; ?>
             </div> <!--/#content-->
 
-            <!-- End of Sidebar -->
 
         </div>
     </section> <!--/#page-->

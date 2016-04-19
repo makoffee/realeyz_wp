@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
 
 
 @font-face {
@@ -34,7 +34,7 @@
 }
 
 body {
-	font-family: 'cooperhewitt-book', sans-serif;
+	font-family: 'cooperhewitt-light', sans-serif;
 	position: relative;
 	font-weight:lighter;
 	font-size:18px;
@@ -42,16 +42,16 @@ body {
 }
 
 b, strong {
-    font-family: 'cooperhewitt-book', sans-serif;
+    font-family: 'cooperhewitt-bold', sans-serif;
 }
 
 h1, h2, h3 {
-	font-family: 'cooperhewitt-light', sans-serif;
+	font-family: 'cooperhewitt-thin', sans-serif;
 	font-weight: normal;
 }
 
 h4, h5, h6 {
-	font-family: 'cooperhewitt-light', sans-serif;
+	font-family: 'cooperhewitt-book', sans-serif;
 	font-weight: normal;
 }
 
@@ -64,7 +64,7 @@ color: #06a0c6 !important;
 }
 
 .page-wrapper {
-    padding: 80px 0px 80px 0px;
+    padding: 60px 0px 80px 0px;
 }
 
 .image-slideshow li div h3 {
@@ -434,25 +434,25 @@ background: #06a0c6;
 
 .btn-success {
     color: #fff;
-    background: #4cae4c;
-    border-color: #4cae4c;
+    background: #04d361;
+    border-color: #04d361;
 }
 
 .btn-transparent.btn-success {
-    color: #4cae4c !important;
+    color: #04d361 !important;
     background: rgba(0, 0, 0, 0);
-    border-color: #4cae4c;
+    border-color: #04d361;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success:focus {
     color: #FFFFFF !important;
-    background: #4cae4c !important;
+    background: #04d361 !important;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success:focus {
-    color: #4cae4c;
+    color: #04d361
     background: rgba(0, 0, 0, 0);
-    border-color: #4cae4c;
+    border-color: #04d361;
 }
 
 .btn-info {

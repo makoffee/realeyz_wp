@@ -31,7 +31,7 @@ CleengApi.setAuthOption('publisherId', "502422900");
 CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
 CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
 CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
-CleenglogoutURL = "http://stream.realeyz.de/user/logout/";
+CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
 
 // test if user is logged
 
@@ -40,7 +40,7 @@ function autologout() {
         if (result.success) {
         return(true);
         } else {
-        window.location = "http://www.realeyz.de/";
+        window.location = "https://www.realeyz.de/";
         }
         });
 }
@@ -86,8 +86,7 @@ CleengApi.autologin(function(result) {
         showOverlay();
         CleengApi.logout(function(result) {
             if (result.success) {
-                showOverlay();
-                window.location = "http://www.realeyz.de/signout";
+                window.location = "https://www.realeyz.de/signout";
             }
         });
         return (false);

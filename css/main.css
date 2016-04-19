@@ -500,12 +500,12 @@ margin-top: -50px;
 #text-carousel video{
 	min-width: 100%;
 	min-height: 100%;
-	width: auto;
+	width: 100%;
 	height: auto;
 	z-index: -100;
 	background-size: cover;
 	overflow: hidden;
-	margin-top: -50px;
+/*	margin-top: -50px; */
 }
 
 #text-carousel .carousel-caption {
@@ -2522,7 +2522,6 @@ div.wpcf7-mail-sent-ok{
 .blog-item ,
 .blog-single{
   margin-bottom: 60px;
-  overflow: hidden;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;

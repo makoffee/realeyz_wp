@@ -17,12 +17,12 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/images/plus.png' ?>" type="image/x-icon"/>
 	<?php } ?>
 
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="http://cdn.cleeng.com/js-api/3.0/api.js"></script>
+	<script type="text/javascript" src="https://cleeng.com/js-api/3.0/api.js"></script>
 	<style>
 	#menu-item-459 { display: none !important;}
 	</style>

@@ -3,6 +3,7 @@
  * Template Name: Flexable no-sidebar
  */
 get_header();
+
 ?>
 
 <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
@@ -15,11 +16,11 @@ get_header();
     <?php else: { ?>   
     
     <?php if( $no_title != 0 ){ ?>
-							<div class="clearfix title-wrap">
-                                <h2 class="title <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
-                    <?php if($page_title != '') { echo $page_title; }else{ echo get_the_title(); } ?> </h2>
-							</div>
-						<?php }?>
+	    <div class="clearfix title-wrap" style="margin-top:120px">
+            <h2 class="<?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
+            <?php if($page_title != '') { echo $page_title; }else{ echo get_the_title(); } ?> </h2><?php }?>
+	    </div>
+	    
     <?php }?>
     <?php endif; ?>
 
@@ -55,8 +56,12 @@ get_header();
 			{
 				if( $page_section == 'default' ){		// Default Content Page
 				?>
+				
+				
+				
 					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>); background-size:cover; background-position: top center;'<?php endif; ?>>
 						<div class="container page-content <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">
+					
 							<?php echo do_shortcode(get_the_content()); ?>
 						</div> <!-- .container -->
 					</section>

@@ -157,7 +157,7 @@ if(!function_exists('themeum_style')):
         wp_enqueue_script('nav',THMJS.'jquery.nav.js',array(),false,true);
         wp_enqueue_script('easing.min',THMJS.'jquery.easing.min.js',array(),false,true);
         wp_enqueue_script('isotope.min',THMJS.'jquery.isotope.min.js',array(),false,true);
-        /* wp_enqueue_script('maps.google','http://maps.googleapis.com/maps/api/js?v=3.14&sensor=false',array(),'',true); */
+        /* wp_enqueue_script('maps.google','https://maps.googleapis.com/maps/api/js?v=3.14&sensor=false',array(),'',true); */
         /* wp_enqueue_script('gmaps',THMJS.'gmaps.js',array(),false,true); */
         wp_enqueue_script('main',THMJS.'main.js',array(),false,true);
         wp_enqueue_script('cleeng.connect',THMJS.'cleeng.connect.js',array(),false,true);
@@ -167,15 +167,15 @@ if(!function_exists('themeum_style')):
 		global $themeum;
 
 		if(isset($themeum['head_font'])):
-			wp_enqueue_style(themeum_slug($themeum['head_font']).'_one','http://fonts.googleapis.com/css?family='.$themeum['head_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
+			wp_enqueue_style(themeum_slug($themeum['head_font']).'_one','https://fonts.googleapis.com/css?family='.$themeum['head_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
 		endif;
 
 		if(isset($themeum['g_select'])):
-			wp_enqueue_style(themeum_slug($themeum['g_select']).'_two','http://fonts.googleapis.com/css?family='.$themeum['g_select'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
+			wp_enqueue_style(themeum_slug($themeum['g_select']).'_two','https://fonts.googleapis.com/css?family='.$themeum['g_select'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
 		endif;
 
 		if(isset($themeum['menu_font'])):
-			wp_enqueue_style(themeum_slug($themeum['menu_font']).'_three','http://fonts.googleapis.com/css?family='.$themeum['menu_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'.$themeum['menu_font_style']['style'],array(),false,'all');
+			wp_enqueue_style(themeum_slug($themeum['menu_font']).'_three','https://fonts.googleapis.com/css?family='.$themeum['menu_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'.$themeum['menu_font_style']['style'],array(),false,'all');
 		endif;
 
 		if(isset($themeum['preset'])):

@@ -30,19 +30,17 @@ if ( isset($themeum['blog_extend']) && ($themeum['blog_extend'] == 1) ) {
                 <div class="col-md-12">
                     <?php echo themeum_pagination(); ?>
                 </div>
-            <?php else: ?>
-                <?php get_template_part( 'post-format/content', 'none' ); ?>
-            <?php endif; ?>
-        </div> <!-- #content -->
-
+            </div> <!-- #content -->
         <div id="sidebar" class="<?php echo $sidebar_class; ?>" role="complementary">
             <div class="sidebar-inner">
                 <aside class="widget-area">
                     <?php dynamic_sidebar('sidebar');?>
                 </aside>
             </div>
-        </div> <!-- #sidebar -->
-
+        </div> 
+            <?php else: ?>
+                <?php get_template_part( 'post-format/content', 'none' ); ?>
+            <?php endif; ?><!-- #sidebar -->
     </div> <!-- .row -->
 </section> <!-- .container -->
 
