@@ -33,23 +33,28 @@ CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https:
 CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
 CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
 
-// test if user is logged
+
+// auto logout - not sure if this one works yet
 
 function autologout() {
         CleengApi.logout(function(result) {
         if (result.success) {
         return(true);
         } else {
-        window.location = "https://www.realeyz.de/";
+        window.location = "https://realeyz.de/";
         }
         });
 }
 
+// Check to see if session is still available 
+
 CleengApi.autologin(function(result) {
 
     if (result.success) {
+        //_trackEvent("user", "status", "member", 1, true);
         jQuery("#menu-item-22732, #menu-item-1261").show();
     } else {
+        //_trackEvent("user", "status", "guest", 0, false);
         jQuery("#menu-item-460, #menu-item-459, #menu-item-458").show();
     }
 
@@ -60,6 +65,7 @@ CleengApi.autologin(function(result) {
 // subscription
 
     jQuery(".monthly-plan").click(function() {
+        //_trackEvent("signup", "click", "monthly-plan", 0, true);
         showOverlay();
         window.location = CleengSubscribeMonthlyURL;
         return (false);
@@ -68,6 +74,7 @@ CleengApi.autologin(function(result) {
 
 // yearly subscription
     jQuery(".yearly-plan").click(function() {
+        //_trackEvent("signup", "click", "yearly-plan", 0, true);
         showOverlay();
         window.location = CleengSubscribeYearlyURL;
         return (false);
@@ -75,6 +82,7 @@ CleengApi.autologin(function(result) {
     
 // login
     jQuery(".login, #menu-item-458 a").click(function() {
+        //_trackEvent("user", "click", "login", 0, true);
         showOverlay();
         document.cookie="realeyzLoginTry=1; domain=realeyz.de";
         window.location = CleengLoginURL;
@@ -83,10 +91,11 @@ CleengApi.autologin(function(result) {
 
     // Logout click event
     jQuery(".logout, #menu-item-1261 a").click(function() {
+        //_trackEvent("user", "click", "logout", 1, true);
         showOverlay();
         CleengApi.logout(function(result) {
             if (result.success) {
-                window.location = "https://www.realeyz.de/signout";
+                window.location = "https://realeyz.de/signout";
             }
         });
         return (false);

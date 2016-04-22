@@ -15,7 +15,7 @@ get_header();
         </div>
     <?php else: { ?>   
     
-    <?php if( $no_title != 0 ){ ?>
+    <?php if( $no_title !== 0 ){ ?>
 	    <div class="clearfix title-wrap" style="margin-top:120px">
             <h2 class="<?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	
             <?php if($page_title != '') { echo $page_title; }else{ echo get_the_title(); } ?> </h2><?php }?>
