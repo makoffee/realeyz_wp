@@ -55,7 +55,7 @@ CleengApi.autologin(function(result) {
         jQuery("#menu-item-22732, #menu-item-1261").show();
     } else {
         //_trackEvent("user", "status", "guest", 0, false);
-        jQuery("#menu-item-460, #menu-item-459, #menu-item-458").show();
+        jQuery("#menu-item-460, #menu-item-459, #menu-item-458, #menu-item-23376").show();
     }
 
 });

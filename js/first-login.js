@@ -6,12 +6,12 @@ console.log(language);
 // default language set to german
 // add more as required 
 
-var siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="//realeyz.de/faq/">hier</a>.';
+var siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="https://realeyz.de/faq/">hier</a>.';
 
 if (language == "en-US") {
-    siteBannerTxt = 'Are you a realeyz subscriber and cant access your account? Click <a href="//realeyz.de/en/faq/">here</a>.';
+    siteBannerTxt = 'Are you a realeyz subscriber and cant access your account? Click <a href="https://realeyz.de/en/faq/">here</a>.';
 } else if(language == "de-DE") {
-    siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="//realeyz.de/faq/">hier</a>.';
+    siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="https://realeyz.de/faq/">hier</a>.';
 }
 
 if (document.cookie.indexOf('realeyzLoginSuccess')<0 && document.cookie.indexOf('realeyzLoginTry')>=0){

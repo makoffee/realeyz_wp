@@ -45,11 +45,15 @@ if(!function_exists('thmtheme_setup')):
 
 		add_theme_support( 'post-thumbnails' );
 
+// consider removing these sizes that are not used much by the final theme
+
 		add_image_size( 'blog-large', 1920, 1080, true );
 		add_image_size( 'blog-mid', 943, 493, true );
 		add_image_size( 'blog-thumb', 199, 128, true );
 		add_image_size( 'team', 435, 393, true );
 		add_image_size( 'portfolio', 435, 330, true );
+
+// consider removing unused post formats 
 
 		add_theme_support( 'post-formats', array( 'aside','audio','chat','gallery','image','link','quote','status','video' ) );
 
@@ -87,8 +91,9 @@ if(!function_exists('thmtheme_widdget_init')):
 					)
 		);
 		
-		// some shit i found on the internet (sorry baby jesus, I didn't mean to make you cry).
-		register_sidebar( array(
+// some shit i found on the internet (sorry baby jesus, I didn't mean to make you cry).
+
+register_sidebar( array(
 'name' => 'Footer Sidebar 1',
 'id' => 'footer-sidebar-1',
 'description' => 'Appears in the footer area',
@@ -167,15 +172,15 @@ if(!function_exists('themeum_style')):
 		global $themeum;
 
 		if(isset($themeum['head_font'])):
-			wp_enqueue_style(themeum_slug($themeum['head_font']).'_one','https://fonts.googleapis.com/css?family='.$themeum['head_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
+			//wp_enqueue_style(themeum_slug($themeum['head_font']).'_one','https://fonts.googleapis.com/css?family='.$themeum['head_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
 		endif;
 
 		if(isset($themeum['g_select'])):
-			wp_enqueue_style(themeum_slug($themeum['g_select']).'_two','https://fonts.googleapis.com/css?family='.$themeum['g_select'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
+			//wp_enqueue_style(themeum_slug($themeum['g_select']).'_two','https://fonts.googleapis.com/css?family='.$themeum['g_select'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',array(),false,'all');
 		endif;
 
 		if(isset($themeum['menu_font'])):
-			wp_enqueue_style(themeum_slug($themeum['menu_font']).'_three','https://fonts.googleapis.com/css?family='.$themeum['menu_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'.$themeum['menu_font_style']['style'],array(),false,'all');
+			//wp_enqueue_style(themeum_slug($themeum['menu_font']).'_three','https://fonts.googleapis.com/css?family='.$themeum['menu_font'].':300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'.$themeum['menu_font_style']['style'],array(),false,'all');
 		endif;
 
 		if(isset($themeum['preset'])):
@@ -238,7 +243,7 @@ if(!function_exists('new_excerpt_more')):
 
 	function new_excerpt_more( $more )
 	{
-		return '&nbsp;<br /><br /><a class="btn btn-style" href="'. get_permalink( get_the_ID() ) . '">'.__('Continue Reading','themeum').' &rarr;</a>';
+		return '&nbsp;<br /><br /><a class="btn btn-primary btn-sm" href="'. get_permalink( get_the_ID() ) . '">'.__('<!--:de-->Weiter lesen<!--:--><!--:en-->Read more<!--:-->','themeum').' <i class="fa fa-chevron-right" aria-hidden="true"></i></a>';
 	}
 	add_filter( 'excerpt_more', 'new_excerpt_more' );
 
@@ -395,12 +400,12 @@ if(!function_exists('themeum_pagination')):
 			echo "<ul class='pagination pagination-lg'>";
 
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages){
-				echo "<li><a href='".get_pagenum_link(1)."'>&laquo;</a></li>";
+				echo "<li><a href='".get_pagenum_link(1)."'><i class='fa fa-angle-double-left' aria-hidden='true'></i></a></li>";
 			}
 
 			if($paged > 1 && $showitems < $pages){ 
 				echo '<li>';
-				previous_posts_link('<<');
+				previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>');
 				echo '</li>';
 			}
 
@@ -414,12 +419,12 @@ if(!function_exists('themeum_pagination')):
 
 			if ($paged < $pages && $showitems < $pages){
 				echo '<li>';
-				next_posts_link('>>');
+				next_posts_link('<i class="fa fa-angle-right" aria-hidden="true"></i>');
 				echo '</li>';
 			}
 
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages){
-				echo "<li><a href='".get_pagenum_link($pages)."'>&raquo;</a></li>";
+				echo "<li><a href='".get_pagenum_link($pages)."'><i class='fa fa-angle-double-right' aria-hidden='true'></i></a></li>";
 			}
 			
 			echo "</ul>";

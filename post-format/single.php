@@ -52,8 +52,8 @@
 				</div> <!-- .post-author -->
 
 		        <div class="clearfix post-navigation">
-		            <?php previous_post_link('<span class="previous-post pull-left btn btn-style">%link</span>','<i class="fa fa-long-arrow-left"></i> previous article'); ?>
-		             <?php next_post_link('<span class="next-post pull-right btn btn-style">%link</span>','next article <i class="fa fa-long-arrow-right"></i>'); ?>
+		            <?php previous_post_link('<span class=" pull-left btn btn-default">%link</span>','<i class="fa fa-long-arrow-left"></i> Früher'); ?>
+		             <?php next_post_link('<span class="pull-right btn btn-default">%link</span>','Nächster <i class="fa fa-long-arrow-right"></i>'); ?>
 		        </div> <!-- .post-navigation -->
 
 
