@@ -27,9 +27,9 @@
 
 @font-face {
   font-family: 'cooperhewitt-bold';
-  src: url('../../fonts/CooperHewitt-bold.eot'); /* IE9 Compat Modes */
-  src: url('../../fonts/CooperHewitt-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../fonts/CooperHewitt-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../../fonts/CooperHewitt-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/CooperHewitt-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 body {

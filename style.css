@@ -852,7 +852,7 @@ display:none;
     background-position:center top;
     background-size:cover;
 }
-#funktions{
+#funktions, #swissfilms-logos{
 background: #FFFFFF;
 background: -moz-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, #cccccc), color-stop(14%, #ffffff), color-stop(51%, #ffffff), color-stop(87%, #ffffff), color-stop(100%, #cccccc));
@@ -1157,4 +1157,4 @@ width:100% !important;
 
 .grow { transition: all .2s ease-in-out; z-index:1}
 .grow:hover { transform: scale(1.1); z-index:2;}
-.grow a {cursor:default}
+/*.grow a {cursor:default}*/

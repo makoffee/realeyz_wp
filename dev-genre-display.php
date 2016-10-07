@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Genre display
+ * Template Name: Genre display (DEV)
  */
 get_header(); 
 
@@ -40,10 +40,11 @@ if( $header_thumbs ) :
   foreach( $header_thumbs as $header_thumb ) {
   setup_postdata($header_thumb);
   $no_title = get_post_meta($header_thumb->ID, 'thm_no_title', true );
-  $kmc_tag_url = get_post_meta($header_thumb->ID, 'kmc_tag_url', true );
+  $kmc_tag_url = get_field('kmc_tage_url', false, false);
+ 
   if( $no_title != 1 ){
-  echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay-dark"><h3 class="entry-title white text-center"><span class="over-under">'. get_the_title($header_thumb->ID) . '</span></h3></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';
-  } else {echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="' . get_permalink($header_thumb->ID) . '"><div class="img-overlay"></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';}
+  echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="' . ($kmc_tag_url) . '"><div class="img-overlay-dark"><h3 class="entry-title white text-center"><span class="over-under">'. get_the_title($header_thumb->ID) . '</span></h3></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';
+  } else {echo '<div class="col-xs-6 col-sm-4 no-padding zoomin category-display fadein-quick"><a href="'; echo($kmc_tag_url); echo'"><div class="img-overlay"></div><img src="' . get_the_post_thumbnail_url($header_thumb->ID)  . '" class="img-responsive img-category"></div>';}
   }
 endif;
 ?>

@@ -15,6 +15,7 @@ if (language == "en-US") {
 }
 
 if (document.cookie.indexOf('realeyzLoginSuccess')<0 && document.cookie.indexOf('realeyzLoginTry')>=0){
+        ga('send', 'event', 'member', 'alert', 'failed-login', 1, true);
         var style = document.createElement("style");// Create the <style> tag
         style.appendChild(document.createTextNode(""));// WebKit hack :(
         document.head.appendChild(style);// Add the <style> element to the page
