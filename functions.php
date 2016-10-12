@@ -749,6 +749,9 @@ return $clauses;
 // this works by the way only for images attached to the post, so great for new posts but 
 
 function auto_featured_image() { global $post;  if (!has_post_thumbnail($post->ID)) { $attached_image = get_children( "post_parent=$post->ID&amp;post_type=attachment&amp;post_mime_type=image&amp;numberposts=1" );  if ($attached_image) { foreach ($attached_image as $attachment_id => $attachment) { set_post_thumbnail($post->ID, $attachment_id); } } } } 
+
+
+
 // Use it temporary to generate all featured images 
 //add_action('the_post', 'auto_featured_image'); 
 //// Used for new posts 
@@ -776,7 +779,7 @@ function gpi_find_image_id($post_id) {
 
 function find_img_src($post) {
     if (!$img = gpi_find_image_id($post->ID))
-        if ($img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
+    if ($img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches))
             $img = $matches[1][0];
     if (is_int($img)) {
         $img = wp_get_attachment_image_src($img);

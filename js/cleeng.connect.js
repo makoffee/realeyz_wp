@@ -81,7 +81,7 @@ CleengApi.autologin(function(result) {
     });
     
 // login
-    jQuery(".login, #menu-item-458 a").click(function() {
+    jQuery(".login, #menu-item-23376 a").click(function() {
         ga('send', 'event', 'member', 'login', 'wp', 0, true);
         showOverlay();
         document.cookie="realeyzLoginTry=1; domain=realeyz.de";
