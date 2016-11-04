@@ -31,6 +31,7 @@ require_once( get_template_directory()  . '/admin/index.php');
 register_nav_menu( 'primary','Primary Menu' );
 register_nav_menu( 'secondary','Secondary Menu' );
 register_nav_menu( 'swissfilms','SWISS FILMS Menu' );
+register_nav_menu( 'critic.de','critic.de Menu' );
 
 
 /*-------------------------------------------*

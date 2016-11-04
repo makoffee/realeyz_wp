@@ -6,15 +6,22 @@ console.log(language);
 // default language set to german
 // add more as required 
 
-var siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="https://realeyz.de/faq/">hier</a>.';
+var siteBannerTxt = 'Dein Nutzerkonto ist noch nicht vollständig. Bitte <a href="https://realeyz.de/signup/">wähle hier einen Plan</a>.';
 
-if (language == "en-US") {
-    siteBannerTxt = 'Are you a realeyz subscriber and cant access your account? Click <a href="https://realeyz.de/en/faq/">here</a>.';
-} else if(language == "de-DE") {
-    siteBannerTxt = 'Du hast ein realeyz Abo und kannst Dich nicht einloggen? Klicke <a href="https://realeyz.de/faq/">hier</a>.';
+var accessCheck = getURLParameter('access');
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
 
-if (document.cookie.indexOf('realeyzLoginSuccess')<0 && document.cookie.indexOf('realeyzLoginTry')>=0){
+if (language == "en-US") {
+    siteBannerTxt = 'Your user account is not yet complete. Please <a href="https://realeyz.de/signup/">select a plan</a>.';
+} else if(language == "de-DE") {
+    siteBannerTxt = 'Dein Nutzerkonto ist noch nicht vollständig. Bitte <a href="https://realeyz.de/signup/">wähle hier einen Plan</a>.';
+}
+// call me simple.  popup should only come up from the 'access not granted' not all this nonsese.
+// nevermind lets make it as complicated as fuck.
+if ((accessCheck == "not-granted") && (document.cookie.indexOf('realeyzLoginSuccess') && document.cookie.indexOf('realeyzLoginTry')>=0)){
+//if (document.cookie.indexOf('realeyzLoginSuccess')<0 && document.cookie.indexOf('realeyzLoginTry')>=0){
         ga('send', 'event', 'member', 'alert', 'failed-login', 1, true);
         var style = document.createElement("style");// Create the <style> tag
         style.appendChild(document.createTextNode(""));// WebKit hack :(

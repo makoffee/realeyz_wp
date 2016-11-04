@@ -6421,12 +6421,12 @@ button.close {
 
 .carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-left {
-    left: 50%
+    left: 10%
 }
 
 .carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-right {
-    right: 50%
+    right: 10%
 }
 
 .carousel-control .icon-prev,
@@ -6479,10 +6479,11 @@ button.close {
 
 .carousel-caption {
     position: absolute;
-    right: 15%;
-    bottom: 20px;
-    left: 15%;
-    z-index: 10;
+    right: 0%;
+    bottom: 0px;
+    left: 50%;
+    top:0;
+    z-index: 0;
     padding-top: 20px;
     padding-bottom: 20px;
     color: #fff;
@@ -6506,8 +6507,8 @@ button.close {
         font-size: 30px
     }
     .carousel-caption {
-        right: 20%;
-        left: 20%;
+        right: 0;
+        left: 50%;
         padding-bottom: 30px
     }
     .carousel-indicators {

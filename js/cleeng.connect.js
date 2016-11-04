@@ -21,6 +21,12 @@ function hideOverlay() {
     jQuery("#lt_overlay").remove();
 }
 
+// get url paramiter - thanks internet
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
 window.onload = function() {
 
 // Define Cleeng vars
@@ -32,6 +38,10 @@ CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/con
 CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
 CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
 CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
+// check if user has failed cleeng varification
+accessCheck = getURLParameter('access');
+MonthlySubscriptionGranted = false;
+YearlySubscriptionGranted = false
 
 
 // auto logout - not sure if this one works yet
@@ -46,11 +56,16 @@ CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
 //        });
 //}
 
+// 
+
+
+
 // Check to see if session is still available 
 
+    
 CleengApi.autologin(function(result) {
 
-    if (result.success) {
+    if ((result.success)&&(accessCheck != "not-granted")) {   
         ga('send', 'event', 'member', 'status', 'online', 1, true);
         jQuery("#menu-item-22732, #menu-item-1261").show();
     } else {
@@ -59,6 +74,12 @@ CleengApi.autologin(function(result) {
     }
 
 });
+
+// auto loggout users who do not have access or failed to complete signup
+
+if (accessCheck == "not-granted") {
+    CleengApi.logout();
+}
 
 
 
