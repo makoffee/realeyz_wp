@@ -32,6 +32,7 @@ register_nav_menu( 'primary','Primary Menu' );
 register_nav_menu( 'secondary','Secondary Menu' );
 register_nav_menu( 'swissfilms','SWISS FILMS Menu' );
 register_nav_menu( 'critic.de','critic.de Menu' );
+register_nav_menu( 'exberliner','Exberliner Menu' );
 
 
 /*-------------------------------------------*
@@ -95,6 +96,15 @@ if(!function_exists('thmtheme_widdget_init')):
 		
 // some shit i found on the internet (sorry baby jesus, I didn't mean to make you cry).
 
+register_sidebar( array(
+'name' => 'Press Sidebar',
+'id' => 'press-sidebar',
+'description' => 'Appears on the press page',
+'before_title' 	=> '<h3  class="widget_title">',
+'after_title' 	=> '</h3>',
+'before_widget' => '<div id="%1$s" class="widget %2$s" >',
+'after_widget' 	=> '</div>'
+) );
 register_sidebar( array(
 'name' => 'Footer Sidebar 1',
 'id' => 'footer-sidebar-1',

@@ -852,7 +852,10 @@ display:none;
     background-position:center top;
     background-size:cover;
 }
-#funktions, #swissfilms-logos, #critic-de-logos{
+
+/* soft shadows for white backgrounds */
+
+#funktions, #swissfilms-logos, #critic-de-logos, #exberliner-logos, #criticde{
 background: #FFFFFF;
 background: -moz-linear-gradient(top, #cccccc 0%, #ffffff 14%, #ffffff 51%, #ffffff 87%, #cccccc 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, #cccccc), color-stop(14%, #ffffff), color-stop(51%, #ffffff), color-stop(87%, #ffffff), color-stop(100%, #cccccc));
@@ -1160,17 +1163,17 @@ width:100% !important;
 /*.grow a {cursor:default}*/
 
 
-.page-template-onepage-critic-de .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
+#carousel-sbs .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
 background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 }
-.page-template-onepage-critic-de .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}}
+#carousel-sbs .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}}
 
-.page-template-onepage-critic-de .carousel-inner .item img {width:66%;}
+#carousel-sbs .carousel-inner .item img {width:66%;}
 
 
-.page-template-onepage-critic-de .carousel-caption {
+#carousel-sbs .carousel-caption {
     position: absolute;
     right: 0%;
     bottom: 0px;
@@ -1186,10 +1189,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
   /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
-            .page-template-onepage-critic-de .carousel-caption p {
+            #carousel-sbs .carousel-caption p {
     font-size:.6em !important;
     }
-    .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-caption {
         right: 0;
         left: 0 !important;
         padding-bottom: 30px
@@ -1198,22 +1201,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     .carousel-indicators {
         display:none;
     }
-    .page-template-onepage-critic-de .carousel-inner .item img {width:100%;}
-        .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-inner .item img {width:100%;}
+        #carousel-sbs .carousel-caption {
         background:rgba(0,0,0,0.5);
         padding-top:10px !important;
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
     }
     
     /*==========  Mobile First Method  ==========*/
 
     /* Custom, iPhone Retina */ 
     @media only screen and (min-width : 320px) {
-            .page-template-onepage-critic-de .carousel-caption p {
+            #carousel-sbs .carousel-caption p {
     font-size:.7em !important;
     }
-    .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-caption {
         right: 0;
         left: 0 !important;
         padding-bottom: 30px
@@ -1221,20 +1224,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     .carousel-indicators {
         display:none;
     }
-    .page-template-onepage-critic-de .carousel-inner .item img {width:100%;}
-        .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-inner .item img {width:100%;}
+        #carousel-sbs .carousel-caption {
         background:rgba(0,0,0,0.5);
         padding-top:20px !important;
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
     }
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
-        .page-template-onepage-critic-de .carousel-caption p {
+        #carousel-sbs .carousel-caption p {
     font-size:1em !important;
     }
-    .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-caption {
         right: 0;
         left: 0 !important;
         padding-bottom: 30px
@@ -1244,56 +1247,66 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         bottom: 10px !important;
         display: inherit !important;
     }
-    .page-template-onepage-critic-de .carousel-inner .item img {width:100%;}
-    .page-template-onepage-critic-de .carousel-caption {
+    #carousel-sbs .carousel-inner .item img {width:100%;}
+    #carousel-sbs .carousel-caption {
         background:rgba(0,0,0,0.5);
         padding-top:20px !important;
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    #carousel-sbs .carousel-caption p, #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
 
     }
 
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
-    .page-template-onepage-critic-de .carousel-caption p {
+     #carousel-sbs .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+    #carousel-sbs .carousel-caption p {
     font-size:.9em !important;
     }
-.page-template-onepage-critic-de .carousel-caption {
+#carousel-sbs .carousel-caption {
         right: 0;
-        left: 33% !important;
+        left: 0px !important;
+        padding-left:50% !important;
         padding-bottom: 30px
     }
     .carousel-indicators {
         bottom: 10px;
         display: inherit !important;
     }
-    .page-template-onepage-critic-de .carousel-inner .item img {width:66%;}
-    .page-template-onepage-critic-de .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    #carousel-sbs .carousel-inner .item img {width:66%;}
+    #carousel-sbs .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 padding-top:40px !important;
 }
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify !important;}
+    #carousel-sbs .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify !important;}
     }
 
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
-    .page-template-onepage-critic-de .carousel-caption p {
+        #carousel-sbs .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+    #carousel-sbs .carousel-caption p {
     font-size:.9em !important;
     }
-    .page-template-onepage-critic-de .carousel-inner .item img {width:66%;}
-    .page-template-onepage-critic-de .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    #carousel-sbs .carousel-inner .item img {width:66%;}
+    #carousel-sbs .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
     }
-    .page-template-onepage-critic-de .carousel-caption {
-        left: 33% !important;
+    #carousel-sbs .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
         padding-top:40px !important;
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:25% !important; padding-right:10%; text-align:justify !important;}
+    #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:justify !important;}
     .carousel-indicators {
         bottom: 20px !important;
         display: inherit !important;
@@ -1302,20 +1315,87 @@ padding-top:40px !important;
 
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
-    .page-template-onepage-critic-de .carousel-inner .item img {width:66%;}
-    .page-template-onepage-critic-de .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     #carousel-sbs .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+        text-align:left !important;
+        padding-left:10%;
+        padding-left:10% !important; padding-right:10%;
+    }
+    #carousel-sbs .carousel-inner .item img {width:66%;}
+    #carousel-sbs .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 }
-.page-template-onepage-critic-de .carousel-caption {
-        left: 33% !important;
+#carousel-sbs .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
         padding-top:40px !important;
     }
-    .page-template-onepage-critic-de .carousel-caption p {padding-left:25% !important; padding-right:10%; text-align:justify !important;
+    #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:justify !important;
     font-size:1.2em !important;}
         .carousel-indicators {
         bottom: 20px !important;
         display: inherit !important;
     }
     }
+    
+    
+/* what I just thought of subtext now? - brilliant! */
+.subtext {
+font-size:.7em;
+opacity: 0.7;
+}
+
+/*
+ * Responsive text aligning
+ * http://ohryan.ca/2014/08/14/set-responsive-text-alignment-bootstrap-3/
+ *
+ * extened by me cuz that shit was bunk and not working with boostrap 3 - boy!
+ */
+ 
+ /* xs */
+@media (max-width: 767px) {
+.text-xs-left { text-align: left !important; }
+.text-xs-right { text-align: right !important; }
+.text-xs-center { text-align: center !important; }
+.text-xs-justify { text-align: justify !important; }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+  .text-sm-left { text-align: left !important; }
+  .text-sm-right { text-align: right !important; }
+  .text-sm-center { text-align: center !important; }
+  .text-sm-justify { text-align: justify !important; }
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .text-md-left { text-align: left !important;; }
+  .text-md-right { text-align: right !important;; }
+  .text-md-center { text-align: center !important;; }
+  .text-md-justify { text-align: justify !important; }
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+  .text-lg-left { text-align: left; }
+  .text-lg-right { text-align: right; }
+  .text-lg-center { text-align: center; }
+  .text-lg-justify { text-align: justify; }
+}
+
+/* no gutters
+ too much encapsulation giving you the blues?  try no-gutter!
+*/
+
+.no-gutter {
+   padding-left: 0 !important;
+   margin-left: 0 !important;
+   padding-right: 0 !important;
+   margin-right: 0 !important;
+}
+
+.dark-transparent {
+background: rgba(25,25,25,0.7);
+}
