@@ -573,7 +573,7 @@ a img.aligncenter {
 .widget ul li:before{
 	content: "\f105";
 	font-family: FontAwesome;
-	position: relative;
+	position: absolute;
 	padding-right:10px;
 }
 
@@ -613,7 +613,7 @@ a img.aligncenter {
 }
 
 .widget ul li a {
-	margin-left: 0px !important;
+	margin-left: 12px !important;
 }
 
 #footer hr {
