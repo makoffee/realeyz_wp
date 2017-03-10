@@ -1168,7 +1168,7 @@ background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); 
 background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 }
-#carousel-sbs .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}}
+#carousel-sbs .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}
 
 #carousel-sbs .carousel-inner .item img {width:66%;}
 

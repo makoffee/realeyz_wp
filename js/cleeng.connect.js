@@ -58,6 +58,14 @@ YearlySubscriptionGranted = false
 
 // 
 
+function cleengCallbackHandler(result) {
+/**
+here if you want you can play with 'result' object a little bit. 
+Inside you can find some information if purchase was made correct and if acces is granted. If not, display proper information
+If access if granted run the line below.
+**/
+window.location.href = "http://subscribe.cleeng.com/realeyz/connect/offerId/" + correct_offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
+}
 
 
 // Check to see if session is still available 
