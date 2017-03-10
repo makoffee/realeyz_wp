@@ -1189,20 +1189,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
   /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
-            #carousel-sbs .carousel-caption p {
+    #carousel-sbs .carousel-caption p {
     font-size:.6em !important;
     }
     #carousel-sbs .carousel-caption {
         right: 0;
         left: 0 !important;
-        padding-bottom: 30px
+        padding-bottom: 30px;
         top:50%;
     }
     .carousel-indicators {
         display:none;
     }
     #carousel-sbs .carousel-inner .item img {width:100%;}
-        #carousel-sbs .carousel-caption {
+    #carousel-sbs .carousel-caption {
         background:rgba(0,0,0,0.5);
         padding-top:10px !important;
     }
