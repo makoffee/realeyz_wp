@@ -19,6 +19,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<script type="text/javascript" src="https://cleeng.com/js-api/3.0/api.js"></script>
+	<script type="text/javascript" id="pap_x2s6df8d" src="https://eyzmedia.postaffiliatepro.com/scripts/2kvy0mjn4"></script>
 	<?php wp_head(); ?>
 	<meta name="google-site-verification" content="C-MKcyCrXIuvy4_vWJq39Kc2MGP31_jr5pRBPASmoEE" />
 	<!-- Facebook Pixel Code -->

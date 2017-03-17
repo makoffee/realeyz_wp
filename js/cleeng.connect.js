@@ -1,3 +1,5 @@
+// Extends Cleeng API 3.0 and postaffiliatepro.com
+
 // Overly and aJax spinner 
 function showOverlay() {
     // Adds the fullscreen overlay
@@ -27,6 +29,25 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
 
+function cleengCallbackHandler(result) {
+if ((result.authorizationSuccessful)){
+    trackAffiliate(result.offerId);
+alert("looks like it was a success"); 
+window.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
+    } else { alert("looks like you broke something"); }
+}
+
+// fire tracking to affiliate program - requires postaffiliatepro.com
+
+function trackAffiliate(productID){
+    PostAffTracker.setAccountId('default1');
+		var sale = PostAffTracker.createSale();
+		sale.setTotalCost('120.50');
+		sale.setOrderID('ORD_12345XYZ');
+		sale.setProductID(productID);
+        PostAffTracker.register();
+    }
+
 window.onload = function() {
 
 // Define Cleeng vars
@@ -41,32 +62,7 @@ CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
 // check if user has failed cleeng varification
 accessCheck = getURLParameter('access');
 MonthlySubscriptionGranted = false;
-YearlySubscriptionGranted = false
-
-
-// auto logout - not sure if this one works yet
-
-//function autologout() {
-//        CleengApi.logout(function(result) {
-//        if (result.success) {
-//        return(true);
-//        } else {
-//        window.location = "https://realeyz.de/";
-//        }
-//        });
-//}
-
-// 
-
-function cleengCallbackHandler(result) {
-/**
-here if you want you can play with 'result' object a little bit. 
-Inside you can find some information if purchase was made correct and if acces is granted. If not, display proper information
-If access if granted run the line below.
-**/
-window.location.href = "http://subscribe.cleeng.com/realeyz/connect/offerId/" + correct_offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
-}
-
+YearlySubscriptionGranted = false;
 
 // Check to see if session is still available 
 

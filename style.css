@@ -1282,7 +1282,6 @@ background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 padding-top:40px !important;
 }
-    }
     #carousel-sbs .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify !important;}
     }
 
@@ -1337,8 +1336,182 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         bottom: 20px !important;
         display: inherit !important;
     }
+}
+
+/* quotes slider oh boy! */
+
+#carousel-quotes .carousel-caption { background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+}
+#carousel-quotes .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}
+
+#carousel-quotes .carousel-inner .item img {width:100%;}
+
+
+#carousel-quotes .carousel-caption {
+    position: absolute;
+    right: 0%;
+    bottom: 0px;
+    left: 50%;
+    top:0;
+    z-index: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6)
+}
+
+  /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+    #carousel-quotes .carousel-caption p {
+    font-size:.6em !important;
+    }
+    #carousel-quotes .carousel-caption {
+        right: 0;
+        left: 0 !important;
+        padding-bottom: 30px;
+        top:50%;
+    }
+    .carousel-indicators {
+        display:none;
+    }
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+    #carousel-quotes .carousel-caption {
+        background:rgba(0,0,0,0.5);
+        padding-top:10px !important;
+    }
+    #carousel-quotes .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
     }
     
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+            #carousel-quotes .carousel-caption p {
+    font-size:.7em !important;
+    }
+    #carousel-quotes .carousel-caption {
+        right: 0;
+        left: 0 !important;
+        padding-bottom: 30px
+    }
+    .carousel-indicators {
+        display:none;
+    }
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+        #carousel-sbs .carousel-caption {
+        background:rgba(0,0,0,0.5);
+        padding-top:20px !important;
+    }
+    #carousel-quotes .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        #carousel-quotes .carousel-caption p {
+    font-size:1em !important;
+    }
+    #carousel-quotes .carousel-caption {
+        right: 0;
+        left: 0 !important;
+        padding-bottom: 30px
+        
+    }
+    .carousel-indicators {
+        bottom: 10px !important;
+        display: inherit !important;
+    }
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+    #carousel-quotes .carousel-caption {
+        background:rgba(0,0,0,0.5);
+        padding-top:20px !important;
+    }
+    #carousel-quotes .carousel-caption p, #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+     #carousel-quotes .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+    #carousel-quotes .carousel-caption p {
+    font-size:.9em !important;
+    }
+    #carousel-quotes .carousel-caption {
+        right: 0;
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-bottom: 30px
+    }
+
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+    #carousel-quotes .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+        padding-top:40px !important;
+    }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+        #carousel-quotes .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+    #carousel-quotes .carousel-caption p {
+    font-size:.9em !important;
+    }
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+    #carousel-quotes .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+    }
+    #carousel-quotes .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-top:40px !important;
+    }
+    .carousel-indicators {
+        bottom: 20px !important;
+        display: inherit !important;
+    }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+     #carousel-quotes .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+        text-align:left !important;
+        padding-left:10%;
+        padding-left:10% !important; padding-right:10%;
+    }
+    #carousel-quotes .carousel-inner .item img {width:100%;}
+    #carousel-quotes .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 33%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(0,0,0,0) 33%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+    }
+    #carousel-quotes .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-top:40px !important;
+    }
+    #carousel-quotes .carousel-caption p {
+        font-size:1.2em !important;}
+        .carousel-indicators {
+        bottom: 20px !important;
+        display: inherit !important;
+    }
+}
+
+/* end quotes slider... yup.
+
     
 /* what I just thought of subtext now? - brilliant! */
 .subtext {
@@ -1398,4 +1571,9 @@ opacity: 0.7;
 
 .dark-transparent {
 background: rgba(25,25,25,0.7);
+}
+
+/* Make it round ! */
+.round {
+border-radius: 50%;
 }

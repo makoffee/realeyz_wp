@@ -114,18 +114,6 @@ var google_remarketing_only = true;
             sr.reveal('.fadein', { delay: 800, opacity: 0, scale: 1,distance: 0 });
             sr.reveal('.fadein-slow', { delay: 1000, opacity: 0, scale: 1, distance: 0 });
 </script>
-
-<!-- Post Affiliate Pro scripts -->
-
-<script type="text/javascript" id="pap_x2s6df8d" src="https://eyzmedia.postaffiliatepro.com/scripts/2kvy0mjn4"></script>
-<script type="text/javascript">
-PostAffTracker.setAccountId('default1');
-try {
-PostAffTracker.track();
-} catch (err) { }
-</script>
-
-<!-- END Post Affiliate Pro scripts -->
     
 </body>
 </html>
