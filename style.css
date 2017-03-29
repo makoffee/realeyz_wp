@@ -1577,3 +1577,21 @@ background: rgba(25,25,25,0.7);
 .round {
 border-radius: 50%;
 }
+
+.step-indicator {
+    display: inline-block; 
+    height: 32px; 
+    width: 32px; 
+    line-height: 36px; 
+    -moz-border-radius: 30px; /* or 50% */ 
+    border-radius: 30px; /* or 50% */ 
+    color: #666; 
+    background: rgba(25,25,25,0.7);
+    text-align: center; 
+    font-size: 1.2em;
+}
+
+.step-select {
+    background-color: white; 
+    color: black;
+}

@@ -29,44 +29,44 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
 
+// cleeng callback code gets run after checkout
+
 function cleengCallbackHandler(result) {
 if ((result.authorizationSuccessful)){
-    trackAffiliate(result.offerId);
-alert("looks like it was a success"); 
-window.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
-    } else { alert("looks like you broke something"); }
+    trackAffiliate(result.offerId, result.id);
+    window.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
+    } else { return(false); }
 }
+
+// cleeng callback code gets run after login
+
+//function loginCallbackHandler(result) {
+//if ((result.authorizationSuccessful)){
+//    document.cookie="realeyzLoginTry=1; domain=realeyz.de";
+//    window.location = CleengLoginURL;
+//    } else { return(false) }
+//}
 
 // fire tracking to affiliate program - requires postaffiliatepro.com
 
-function trackAffiliate(productID){
+function trackAffiliate(productID, orderID){
     PostAffTracker.setAccountId('default1');
-		var sale = PostAffTracker.createSale();
-		sale.setTotalCost('120.50');
-		sale.setOrderID('ORD_12345XYZ');
-		sale.setProductID(productID);
-        PostAffTracker.register();
+    if (productID == SubscribeMonthlyId){
+        sale = PostAffTracker.createAction('month');
+        sale.setTotalCost('5.50');
+        sale.setOrderID(orderID);
+        sale.setProductID(SubscribeMonthlyId);
+        }
+    if (productID == SubscribeYearlyId){
+        sale = PostAffTracker.createAction('year');
+        sale.setTotalCost('49.50');
+        sale.setOrderID(orderID);
+        sale.setProductID(SubscribeYearlyId);
+        }
+    PostAffTracker.register();
+    return (true);
     }
 
-window.onload = function() {
-
-// Define Cleeng vars
-
-SubscribeMonthlyId = "S479758275_DE";
-SubscribeYearlyId = "S696050413_DE";
-CleengApi.setAuthOption('publisherId', "502422900");
-CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
-CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
-CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
-CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
-// check if user has failed cleeng varification
-accessCheck = getURLParameter('access');
-MonthlySubscriptionGranted = false;
-YearlySubscriptionGranted = false;
-
-// Check to see if session is still available 
-
-    
 CleengApi.autologin(function(result) {
 
     if ((result.success)&&(accessCheck != "not-granted")) {   
@@ -79,12 +79,48 @@ CleengApi.autologin(function(result) {
 
 });
 
+// get that cookie
+
+languageCookie = function(){
+    if (getLanguageCookie("qtrans_front_language") == "en"){
+        return "en_US";
+        } else {
+            return "de_DE";
+            }
+    };
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+window.onload = function() {
+
+// Define Cleeng vars
+
+SubscribeMonthlyId = "S479758275_DE";
+SubscribeYearlyId = "S696050413_DE";
+CleengApi.setAuthOption('publisherId', "502422900");
+CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
+CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
+CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
+CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
+
+
+// check if user has failed cleeng varification
+accessCheck = getURLParameter('access');
+MonthlySubscriptionGranted = false;
+YearlySubscriptionGranted = false;
+
+// Check to see if session is still available 
+
+
 // auto loggout users who do not have access or failed to complete signup
 
 if (accessCheck == "not-granted") {
     CleengApi.logout();
 }
-
 
 
 // subscription
@@ -113,8 +149,28 @@ if (accessCheck == "not-granted") {
         window.location = CleengLoginURL;
         return (false);
     });
+    
 
-    // Logout click event
+// dev-login
+    jQuery(".login-dev").click(function() {
+        ga('send', 'event', 'member', 'login', 'wp', 0, true);
+        //showOverlay();
+        CleengApi.loginOnly({
+            displayType: "overlay",
+            publisherId: "502422900",
+            locale: "de_DE",
+            completed : function(result){
+                if ((result.authorizationSuccessful)){
+                    document.cookie="realeyzLoginTry=1; domain=realeyz.de";
+                    window.location = CleengLoginURL;
+                } else { return(false); }
+            }
+        });
+        return (false);
+    });
+
+
+// Logout click event
     jQuery(".logout, #menu-item-1261 a").click(function() {
         ga('send', 'event', 'member', 'logout', 'wp', 1, true);
         showOverlay();
