@@ -106,13 +106,31 @@ var google_remarketing_only = true;
 </div>
 </noscript>
 <script>
-            sr.reveal('.scale-first', { delay: 500, scale: 0.9 });
-            sr.reveal('.scale-second', { delay: 700, scale: 0.9 });
-            sr.reveal('.scale-third', { delay: 800, scale: 0.9 });
-            
-            sr.reveal('.fadein-quick', { delay: 500, opacity: 0, scale: 1,distance: 0 });
-            sr.reveal('.fadein', { delay: 800, opacity: 0, scale: 1,distance: 0 });
-            sr.reveal('.fadein-slow', { delay: 1000, opacity: 0, scale: 1, distance: 0 });
+
+if (document.getElementsByClassName("scale-first")[0]) {
+	sr.reveal('.scale-first', { delay: 500, scale: 0.9 });
+}
+
+if (document.getElementsByClassName("scale-second")[0]) {
+	sr.reveal('.scale-second', { delay: 700, scale: 0.9 });
+}
+
+if (document.getElementsByClassName("scale-third")[0]) {
+	sr.reveal('.scale-third', { delay: 800, scale: 0.9 });
+}
+
+if (document.getElementsByClassName("fadein-quick")[0]) {
+	sr.reveal('.fadein-quick', { delay: 500, opacity: 0, scale: 1,distance: 0 });
+}
+
+if (document.getElementsByClassName("fadein")[0]) {
+	sr.reveal('.fadein', { delay: 800, opacity: 0, scale: 1,distance: 0 });
+}
+
+if (document.getElementsByClassName("fadein-slow")[0]) {
+	sr.reveal('.fadein-slow', { delay: 1000, opacity: 0, scale: 1, distance: 0 });
+}
+
 </script>
 
 <!-- postaffiliatepro.com click tracking code -->
