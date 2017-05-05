@@ -62,6 +62,7 @@ function getURLParameter(name) {
 
 function cleengCallbackHandler(result) {
 if ((result.authorizationSuccessful)){
+    twttr.conversion.trackPid('nwdyu', { tw_sale_amount: 0, tw_order_quantity: 0 });
     document.cookie="realeyzLoginTry=1; domain=realeyz.de";
     try {
         var d = document.getElementById("checkout-step3");
