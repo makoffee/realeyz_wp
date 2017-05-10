@@ -70,6 +70,7 @@ if ((result.authorizationSuccessful)){
     } catch(e){
             console.log("no step indicator found");
         }
+    ga('send', 'event', 'acquisition', 'success', result.offerId, 1, true);
     trackAffiliate(result.offerId, result.id);
     window.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
 } else {

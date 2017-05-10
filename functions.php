@@ -281,9 +281,9 @@ if(!function_exists('themeum_plugins_include')):
 					'name'                  => 'Enter Slider', // The plugin name
 					'slug'                  => 'enter-slider', // The plugin slug (typically the folder name)
 					'source'                => get_stylesheet_directory() . '/lib/plugins/enter-slider.zip', // The plugin source
-					'required'              => true, // If false, the plugin is only 'recommended' instead of required
+					'required'              => false, // If false, the plugin is only 'recommended' instead of required
 					'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-					'force_activation'      => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+					'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url'          => '', // If set, overrides default API URL and points to an external URL
 				),
@@ -292,9 +292,9 @@ if(!function_exists('themeum_plugins_include')):
 					'name'                  => 'Enter Team', // The plugin name
 					'slug'                  => 'enter-team', // The plugin slug (typically the folder name)
 					'source'                => get_stylesheet_directory() . '/lib/plugins/enter-team.zip', // The plugin source
-					'required'              => true, // If false, the plugin is only 'recommended' instead of required
+					'required'              => false, // If false, the plugin is only 'recommended' instead of required
 					'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-					'force_activation'      => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+					'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url'          => '', // If set, overrides default API URL and points to an external URL
 				),
@@ -305,9 +305,9 @@ if(!function_exists('themeum_plugins_include')):
 					'name'                  => 'Themeum Project', // The plugin name
 					'slug'                  => 'themeum-project', // The plugin slug (typically the folder name)
 					'source'                => get_stylesheet_directory() . '/lib/plugins/themeum-project.zip', // The plugin source
-					'required'              => true, // If false, the plugin is only 'recommended' instead of required
+					'required'              => false, // If false, the plugin is only 'recommended' instead of required
 					'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-					'force_activation'      => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+					'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url'          => '', // If set, overrides default API URL and points to an external URL
 				),
