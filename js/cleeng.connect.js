@@ -61,8 +61,19 @@ function getURLParameter(name) {
 // cleeng callback code gets run after checkout
 
 function cleengCallbackHandler(result) {
+
 if ((result.authorizationSuccessful)){
-    twttr.conversion.trackPid('nwdyu', { tw_sale_amount: 0, tw_order_quantity: 0 });
+    var trackOffer = result.offerId;
+    trackAffiliate(result.offerId, result.id);
+    //if (result.offerID == SubscribeMonthlyId) { 
+    //    console.log("realeyz: Monthly plan signup success " + result.offerID);
+    //    ga('send', 'event', 'acquisition', 'success', 'monthly-plan', 5.50, true);
+    //}
+    //if (result.offerID == SubscribeYearlyId) { 
+    //    console.log("realeyz: Yearly plan signup success " + result.offerID);
+    //    ga('send', 'event', 'acquisition', 'success', 'yearly-plan', 49.50, true);
+    //}
+    // twttr.conversion.trackPid('nwdyu', { tw_sale_amount: 0, tw_order_quantity: 0 });
     document.cookie="realeyzLoginTry=1; domain=realeyz.de";
     try {
         var d = document.getElementById("checkout-step3");
@@ -70,9 +81,11 @@ if ((result.authorizationSuccessful)){
     } catch(e){
             console.log("no step indicator found");
         }
-    ga('send', 'event', 'acquisition', 'success', result.offerId, 1, true);
-    trackAffiliate(result.offerId, result.id);
-    window.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));
+
+    ga('send', 'event', 'acquisition', 'success', trackOffer, {
+            'transport': 'beacon',
+            'hitCallback': function(){document.location = "https://subscribe.cleeng.com/realeyz/connect/offerId/" + result.offerId + '?result=' + encodeURIComponent(JSON.stringify(result));}
+            });
 } else {
     console.log("User cancled signup or was not granted access. so sad.");
         try {
@@ -115,10 +128,10 @@ function trackAffiliate(productID, orderID){
 CleengApi.autologin(function(result) {
 
     if ((result.success)&&(accessCheck != "not-granted")) {   
-        ga('send', 'event', 'member', 'status', 'online', 1, true);
+        ga('send', 'event', 'member', 'status', 'online', 1);
         jQuery("#menu-item-22732, #menu-item-1261").show();
     } else {
-        ga('send', 'event', 'member', 'status', 'offline', 1, true);
+        ga('send', 'event', 'member', 'status', 'offline', 1);
         jQuery("#menu-item-460, #menu-item-459, #menu-item-458, #menu-item-23376").show();
     }
 
@@ -231,7 +244,7 @@ function getCookie(name) {
 // New Modal login
     jQuery(".login, #menu-item-23376 a").click(function() {
         document.cookie="realeyzLoginTry=1; domain=realeyz.de";
-        ga('send', 'event', 'member', 'login', 'wp', 0, true);
+        ga('send', 'event', 'member', 'login', 'wp', 0);
         //showOverlay();
         CleengApi.loginOnly({
             displayType: "overlay",
@@ -252,7 +265,7 @@ function getCookie(name) {
 
 // Logout click event
     jQuery(".logout, #menu-item-1261 a").click(function() {
-        ga('send', 'event', 'member', 'logout', 'wp', 1, true);
+        ga('send', 'event', 'member', 'logout', 'wp', 1);
         showOverlay();
         CleengApi.logout(function(result) {
             if (result.success) {
