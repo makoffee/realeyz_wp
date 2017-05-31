@@ -24,8 +24,9 @@ window.onload = function() {
     if (accessCheck == "not-granted") {
         CleengApi.logout();
     }
-
-    // Overly and aJax spinner [not currently in use]
+    
+    
+    // Overly and aJax spinner - it's back baby.
     function showOverlay() {
         // Adds the fullscreen overlay
         var oDiv = jQuery("<div></div>");
@@ -34,16 +35,16 @@ window.onload = function() {
         jQuery("body").append(oDiv);
 
         // Adds the spinner [not currently in use]
-        var lDiv = jQuery("<i></i>");
+        var lDiv = jQuery("<div></div>");
         lDiv.attr("id", "lt_loading");
-        lDiv.addClass("fa fa-refresh fa-spin fa-3x");
+        lDiv.addClass("rotating");
         lDiv.css("display", "block");
         jQuery("body").append(lDiv);
     }
 
     // Hides the spinner [not currently in use]
 
-    function hideOverlay() {
+    function stopThinking() {
         jQuery("#lt_loading").remove();
         jQuery("#lt_overlay").remove();
     }
@@ -59,10 +60,8 @@ window.onload = function() {
     function cleengCallbackHandler(result) {
         // set cookie for signup attempt.  To be checked on stream.realeyz.de
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
-
-
+        showOverlay();
         if ((result.authorizationSuccessful)) {
-
             var trackOffer = result.offerId;
             // Affiliate tracker pro call
             trackAffiliate(result.offerId, result.id);
