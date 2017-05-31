@@ -60,8 +60,8 @@ window.onload = function() {
     function cleengCallbackHandler(result) {
         // set cookie for signup attempt.  To be checked on stream.realeyz.de
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
-        showOverlay();
         if ((result.authorizationSuccessful)) {
+            showOverlay();
             var trackOffer = result.offerId;
             // Affiliate tracker pro call
             trackAffiliate(result.offerId, result.id);

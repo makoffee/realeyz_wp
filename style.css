@@ -837,7 +837,7 @@ display:none;
 #lt_loading {
     display: none;
     position: fixed;
-    color: #fff;
+/*    color: #fff;
     opacity: .8;
     top: 50%;
     left: 50%;
@@ -845,9 +845,14 @@ display:none;
     margin-left: -42px;
     padding: 1px;
     z-index: 2002;
+*/
     overflow: auto;
     width:128px;
     height:128px;
+  margin: auto;
+  /*position: absolute; */
+  top: 0; left: 0; bottom: 0; right: 0;
+
     background-image: url("https://realeyz.de/wp-content/uploads/realeyz_spinner@1x.png")
 }
 
