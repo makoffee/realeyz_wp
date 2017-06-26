@@ -48,13 +48,13 @@ if(!function_exists('thmtheme_setup')):
 
 		add_theme_support( 'post-thumbnails' );
 
-// consider removing these sizes that are not used much by the final theme
+// blog-large is used in several layouts, and should be considered in relation to the blog image size issues.
 
 		add_image_size( 'blog-large', 1920, 1080, true );
-		add_image_size( 'blog-mid', 943, 493, true );
-		add_image_size( 'blog-thumb', 199, 128, true );
-		add_image_size( 'team', 435, 393, true );
-		add_image_size( 'portfolio', 435, 330, true );
+//		add_image_size( 'blog-mid', 943, 493, true );
+//		add_image_size( 'blog-thumb', 199, 128, true );
+//		add_image_size( 'team', 435, 393, true );
+//		add_image_size( 'portfolio', 435, 330, true );
 
 // consider removing unused post formats 
 
