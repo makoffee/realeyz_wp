@@ -196,24 +196,32 @@ window.onload = function() {
     });
 
     // New Modal login
+    //jQuery(".login, #menu-item-23376 a").click(function() {
+    //    document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
+    //    ga('send', 'event', 'member', 'login', 'wp', 0);
+    //    //showOverlay();
+    //    CleengApi.loginOnly({
+    //        displayType: "overlay",
+    //        publisherId: CleengPublisherID,
+    //        locale: setLanguage,
+    //        completed: function(result) {
+    //            if ((result.authorizationSuccessful)) {
+    //                window.location = CleengLoginURL;
+    //            } else {
+    //                console.log("Access was not granted.");
+    //                return (false);
+    //            }
+    //        }
+    //    });
+    //    return (false);
+    //});
+
+    // feels good man
     jQuery(".login, #menu-item-23376 a").click(function() {
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
         ga('send', 'event', 'member', 'login', 'wp', 0);
-        //showOverlay();
-        CleengApi.loginOnly({
-            displayType: "overlay",
-            publisherId: CleengPublisherID,
-            locale: setLanguage,
-            completed: function(result) {
-                if ((result.authorizationSuccessful)) {
-                    window.location = CleengLoginURL;
-                } else {
-                    console.log("Access was not granted.");
-                    return (false);
-                }
-            }
-        });
-        return (false);
+        //window.location = CleengLoginURL;
+        window.location = "https://stream.realeyz.de/user/login"
     });
 
     // Logout click event
