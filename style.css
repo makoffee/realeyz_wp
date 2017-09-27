@@ -905,22 +905,33 @@ div .theline span:before, div.theline span:after {
   border-top: 1px solid white;
 }
 
+.theline-dark span:before, .theline-dark span:after {
+  content: "";
+  position: absolute;
+  border-top: 1px solid #ccc;
+  width: 400%;
+  top: 50%;
+}
 
-.theline {
+div .theline-dark span:before, div.theline-dark span:after {
+  border-top: 1px solid #ccc;
+}
+
+.theline, .theline-dark {
   overflow: hidden;
   text-align: center;
 }
 
-.theline span {
+.theline span, .theline-dark span {
   position: relative;
 }
 
-.theline span:before {
+.theline span:before, .theline-dark span:before {
   right: 100%;
   margin-right: .25em;
 }
 
-.theline span:after {
+.theline span:after, .theline-dark span:after {
   left: 100%;
   margin-left: .25em;
 }
@@ -1157,7 +1168,7 @@ width:100% !important;
     font-size:1.1em;
 }
 .btn {
-    padding: 0px 1.25em 0px 1.25em !important;
+    padding: 0px 1em 0px 1em !important;
     line-height: 2.5em;
     height: 2.5em;
     border-radius: 2px;
@@ -1533,6 +1544,224 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 /* end quotes slider... yup.
 
+/* partner slider oh boy! */
+
+#carousel-partner #carousel-control {
+    z-index:16;
+}
+
+#carousel-partner .overlay {
+position: absolute;
+    z-index: 10;
+    /* width: 33%; */
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 66%;
+    right: 60px;
+    /* margin-right: 160px; */
+    margin-top: 40px;
+    
+}
+
+#carousel-partner .carousel-caption { background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+}
+#carousel-partner .carousel-caption p {padding-left:25%; padding-right:10%; text-align:justify; font-size:.9em; margin:0 0 20px !important;}
+
+#carousel-partner .carousel-inner .item img {width:66%;}
+
+
+#carousel-partner .carousel-caption {
+    position: absolute;
+    right: 0%;
+    bottom: 0px;
+    left: 50%;
+    top:0;
+    z-index: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6)
+}
+
+  /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+    #carousel-partner .carousel-caption p {
+    font-size:.6em !important;
+    }
+    #carousel-partner .carousel-caption {
+        right: 0;
+        left: 0 !important;
+        padding-bottom: 30px;
+        top:50%;
+    }
+    .carousel-indicators {
+        display:none;
+    }
+    #carousel-partner .carousel-inner .item img {width:100%;}
+    #carousel-partner .carousel-caption {
+        background:rgba(0,0,0,0.5);
+        padding-top:10px !important;
+    }
+    #carousel-partner .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    }
+    
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    
+    @media only screen and (min-width : 320px) {
+        #carousel-partner .overlay {
+        left: 40px !important;
+    }
+    #carousel-partner .carousel-caption p, #carousel-partner .overlay p {
+        font-size:.7em !important;
+        margin:0 0 20px !important;
+    }
+    
+    #carousel-partner .carousel-caption {
+        right: 0;
+        left: 0 !important;
+        top: 0 !important;
+        padding-bottom: 30px
+    }
+    .carousel-indicators {
+        display:none;
+    }
+    #carousel-partner .carousel-inner .item img {width:100%;}
+        #carousel-partner .carousel-caption {
+        background:rgba(0,0,0,0.5);
+        padding-top:20px !important;
+        
+    }
+    #carousel-partner .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+    #carousel-partner .overlay {
+        left: 55% !important;
+    }
+        #carousel-partner .carousel-caption p, #carousel-partner .overlay p {
+        font-size:.7em !important;
+        margin:0 0 20px !important;
+    }
+    #carousel-partner .carousel-caption {
+        right: 0;
+        left: 50% !important;
+        padding-bottom: 30px
+        
+    }
+
+    .carousel-indicators {
+        bottom: 10px !important;
+        display: inherit !important;
+    }
+    #carousel-partner .carousel-inner .item img {width:100%;}
+    #carousel-partner .carousel-caption {
+        background:rgba(0,0,0,0.75);
+        padding-top:20px !important;
+    }
+    #carousel-partner .carousel-caption p, #carousel-sbs .carousel-caption p {padding-left:10% !important; padding-right:10%; text-align:center !important;}
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+    #carousel-partner .overlay {
+        left: 60% !important;
+    }
+     #carousel-partner .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+        #carousel-partner .carousel-caption p, #carousel-partner .overlay p {
+        font-size:.8em !important;
+        margin:0 0 20px !important;
+    }
+    #carousel-partner .carousel-caption {
+        right: 0;
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-bottom: 30px
+    }
+
+    #carousel-partner .carousel-inner .item img {width:90%;}
+    #carousel-partner .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 50%, rgba(0,0,0,1) 80%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 80%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+        padding-top:40px !important;
+    }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+    #carousel-partner .overlay {
+        left: 66% !important;
+    }
+        #carousel-partner .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+            text-align:left !important;
+            padding-left:10% !important; padding-right:10%;
+        }
+    #carousel-partner .carousel-caption p, #carousel-partner .overlay p {
+        font-size:.9em !important;
+        margin:0 0 30px !important;
+    }
+    #carousel-partner .carousel-inner .item img {width:80%;}
+    #carousel-partner .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 50%, rgba(0,0,0,1) 75%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 75%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+    }
+    #carousel-partner .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-top:40px !important;
+    }
+    .carousel-indicators {
+        bottom: 20px !important;
+        display: inherit !important;
+    }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+        #carousel-partner .overlay {
+            left: 66% !important;
+        }
+     #carousel-partner .carousel-caption h1, #carousel-sbs .carousel-caption h2, #carousel-sbs .carousel-caption h3, #carousel-sbs .carousel-caption h4, #carousel-sbs .carousel-caption h5 {
+        text-align:left !important;
+        padding-left:10%;
+        padding-left:10% !important; padding-right:10%;
+    }
+    #carousel-partner .carousel-inner .item img {width:66%;}
+    #carousel-partner .carousel-caption {background: -moz-linear-gradient(left,  rgba(0,0,0,0) 50%, rgba(0,0,0,1) 66%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+    }
+    #carousel-partner .carousel-caption {
+        left: 0px !important;
+        padding-left:50% !important;
+        padding-top:40px !important;
+    }
+    #carousel-partner .carousel-caption p, #carousel-partner .overlay p {
+        font-size:1em !important;
+        margin:0 0 40px !important;
+    }
+        .carousel-indicators {
+        bottom: 20px !important;
+        display: inherit !important;
+    }
+}
+
+/* end partner slider... yup.
+
     
 /* what I just thought of subtext now? - brilliant! */
 .subtext {
@@ -1648,4 +1877,48 @@ background: -o-linear-gradient(-45deg, #06a0c6 0%,#d21871 100%); /* Opera 11.10-
 background: -ms-linear-gradient(-45deg, #06a0c6 0%,#d21871 100%); /* IE10 preview */
 background: linear-gradient(135deg, #06a0c6 0%,#d21871 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06a0c6', endColorstr='#d21871',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* Nav scroll stuff, hold on to your butts */
+
+#header .navbar {
+  background: rgba(0,0,0,.9);
+}
+
+.home #header .navbar {
+  background: rgba(0,0,0,0);
+}
+
+.navbar {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.navbar.scrolled {
+    background: rgb(90, 90, 90); /* IE */
+    background: rgba(0,0,0,.9) !important; /* NON-IE */
+}
+
+.navbar-collapse .in > .navbar {
+    background: rgba(0,0,0,.9) !important;
+}
+
+.rounded-white {
+color: #666;
+background-color: white;
+border-radius: 24px;
+}
+
+.soft-shadow {
+-webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
+-moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
+box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
+}
+
+.white p a {
+    color:white;
+    text-decoration: underline;
 }

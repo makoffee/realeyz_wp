@@ -417,6 +417,8 @@ background: #06a0c6;
     border-color: #06a0c6;
 }
 
+
+
 .btn-cta:hover, .btn-cta:active, .btn-cta:focus {
     border-color: #ffffff !important;
 }
@@ -452,8 +454,9 @@ background: #06a0c6;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success:focus {
-    color: #FFFFFF !important;
-    background: #04d361 !important;
+    color: #04d361 !important;
+    background: #FFFFFF !important;
+    border-color: #04d361;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success:focus {

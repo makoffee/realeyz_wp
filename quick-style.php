@@ -34,7 +34,9 @@ if (isset($themeum))
 		if ( $themeum['menu_type'] == 'percent' ) {
 			$rgb = hex2rgb( $themeum['menu_color'] );
 	?>
+	<?php /* ?>
 		background: rgba(<?php echo $rgb['r']; ?>,<?php echo $rgb['g']; ?>,<?php echo $rgb['b']; ?>,<?php echo $themeum['color_percent']; ?>)
+	<?php // */ ?>
 	<?php
 		}
 		else

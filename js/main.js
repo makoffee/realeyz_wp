@@ -50,6 +50,37 @@ jQuery(document).ready(function($){'use strict';
 	    scrollThreshold: 0.3,
 	    filter: ':not(.no-scroll)'
 	});
+	
+	/**
+ * Listen to scroll to change header opacity class
+ */
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+$(function() {
+    $('.navbar-toggle').on('click', function(){ 
+        
+        if(($('.navbar-toggle').hasClass("collapsed")) === true ){
+             $('.navbar').addClass("scrolled");
+        } else {
+            $('.navbar').removeClass("scrolled");
+        }
+    });
+});
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+	
 
 	$('.features-nav li').on('click',function(){'use strict',
 		$('.features-nav li').removeClass('active');
