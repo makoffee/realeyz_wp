@@ -1,22 +1,9 @@
+<?php $blogViews = get_post_meta(get_the_ID(),'_post_count_key',true); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="blog-item">
-
-        <div class="col-sm-2">
-            <div class="entry-meta text-center">
-                <?php echo get_avatar( get_the_author_meta('user_email'), $size = '50'); ?>
-                <h2><?php the_author_posts_link() ?></h2>
-                <hr>
-                <span><i class="fa fa-eye"></i> <?php echo get_post_meta(get_the_ID(),'_post_count_key',true); // dont-delete ?> </span>
-                <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-                <span class="comments-number"> <i class="fa fa-comments-o"></i> <?php echo get_comments_number(get_the_ID()); ?></span>
-                <?php endif; //.comment-link ?>
-            </div>
-        </div>
-			
-			<div class="col-sm-10">
-
-				<div class="blog-content">
+    <div class="blog-item">  		
+		<div>
+            <div class="blog-content">
 					<div class="featured-image">
 						<?php $video_source = rwmb_meta( 'thm_video_source' ); ?>
 						<?php $video = rwmb_meta( 'thm_video' ); ?>
@@ -28,27 +15,36 @@
 						<?php elseif ($video_source == 3): ?>
 							<?php echo '<iframe src="http://player.vimeo.com/video/'.$video.'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'; ?>
 						<?php endif; ?>
-						<span class="date"><?php the_time('M'); ?><span><?php the_time('d'); ?></span></span>
 
 					</div>
-
 	                 <header class="entry-header">
+	                 <div class="row">
+	                 <div class="col-xs-6">
 	                        <h3 class="entry-title">
 	                            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 	                            <?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
 	                            <sup class="featured-post"><?php _e( 'Sticky', 'themeum' ) ?></sup>
 	                            <?php } ?>
-	                        </h3> <!-- //.entry-title -->
-	                </header>   
+	                        </h3> 
+	                        <!-- //.entry-title -->
+	                </div>
+	                <div class="col-xs-6 text-right">
+			        <a class="btn btn-primary btn-sm" href="<?php $key="kmc_entry_url"; echo get_post_meta($post->ID, $key, true); ?>#WATCH">WATCH FULL FILM</a>
+	                </div>
+	                </div>
+	                </header>
+	                <?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+	                <iframe src="https://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=false&width=450&action=like&font=arial&colorscheme=light&height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowtransparency="true"></iframe>
+	                <!-- //.facebook -->
 					 <div class="post-content">
-			            <?php the_excerpt(); ?>
+			            <?php the_content(); ?>
 			        </div>
+			        
 
-		        </div><!--/.blog-content-->
+		        </div>
+        </div>
 
-			</div>
-	</div> <!--/#post-->
-
+    </div> <!--/#post-->
 
 </article> <!--/#post-->
 

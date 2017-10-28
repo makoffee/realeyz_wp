@@ -28,8 +28,8 @@
                     </h3> <!-- //.entry-title -->
                 </header>
     			 <div class="post-content">
-                    <h5 style="color:#666;"><i class="fa fa-user" aria-hidden="true"></i> <?php the_author_posts_link(); ?> | <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <?php echo get_the_date(); ?><?php if ($blogViews !=0) {?>
-| <i class="fa fa-eye" aria-hidden="true"></i></i> <?php echo ($blogViews); }; ?></h5>
+                    <h5 style="color:#666;"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<?php the_author_posts_link(); ?>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_the_date(); ?><?php if ($blogViews !=0) {?>
+&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp; <?php echo ($blogViews); }; ?></h5>
                     <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
                         <span class="comments-number"> <i class="fa fa-comments-o"></i> <?php echo get_comments_number(get_the_ID()); ?></span>
                     <?php endif;?>

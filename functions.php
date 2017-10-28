@@ -106,6 +106,34 @@ register_sidebar( array(
 'after_widget' 	=> '</div>'
 ) );
 register_sidebar( array(
+'name' => 'Video Post Sidebar',
+'id' => 'video-sidebar',
+'description' => 'Appears on video posts',
+'before_title' 	=> '<h3  class="widget_title">',
+'after_title' 	=> '</h3>',
+'before_widget' => '<div id="%1$s" class="widget %2$s" >',
+'after_widget' 	=> '</div>'
+) );
+register_sidebar( array(
+'name' => 'Green-Film Sidebar',
+'id' => 'green-film-sidebar',
+'description' => 'Appears on video posts',
+'before_title' 	=> '<h3  class="widget_title">',
+'after_title' 	=> '</h3>',
+'before_widget' => '<div id="%1$s" class="widget %2$s" >',
+'after_widget' 	=> '</div>'
+) );
+register_sidebar( array(
+'name' => 'Confrontations Sidebar',
+'id' => 'confrontations-sidebar',
+'description' => 'Appears on video posts',
+'before_title' 	=> '<h3  class="widget_title">',
+'after_title' 	=> '</h3>',
+'before_widget' => '<div id="%1$s" class="widget %2$s" >',
+'after_widget' 	=> '</div>'
+) );
+
+register_sidebar( array(
 'name' => 'Footer Sidebar 1',
 'id' => 'footer-sidebar-1',
 'description' => 'Appears in the footer area',

@@ -5,6 +5,7 @@ window.onload = function() {
 
     SubscribeMonthlyId = "S479758275_DE";
     SubscribeYearlyId = "S696050413_DE";
+    SubscribeSwissPromoId = "P466233560_DE";
     CleengPublisherID = "502422900";
     CleengApi.setAuthOption('publisherId', CleengPublisherID);
     CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
@@ -186,6 +187,29 @@ window.onload = function() {
         });
         //showOverlay();
         //window.location = CleengSubscribeYearlyURL;
+        try {
+            var d = document.getElementById("checkout-step2");
+            d.className += " step-select";
+        } catch (e) {
+            console.log("no step indicator found");
+        }
+        return (false);
+    });
+    
+        // new swiss promo subscription
+
+    jQuery(".swiss-promo").click(function() {
+        ga('send', 'event', 'acquisition', 'signup', 'swiss-promo', 0, true);
+        CleengApi.checkout({
+            displayType: "overlay",
+            //publisherId: CleengPublisherID,
+            locale: setLanguage,
+            offerId: SubscribeSwissPromoId,
+            completed: function(result) {
+                document.location = "https://stream.realeyz.de/user/login/";
+            }
+        });
+
         try {
             var d = document.getElementById("checkout-step2");
             d.className += " step-select";

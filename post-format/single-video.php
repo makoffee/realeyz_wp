@@ -1,20 +1,9 @@
+<?php $blogViews = get_post_meta(get_the_ID(),'_post_count_key',true); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="blog-single row">
-
-		<div class="col-sm-2">
-			<div class="entry-meta text-center">
-				<?php echo get_avatar( get_the_author_meta('user_email'), $size = '50'); ?>
-				<h2><?php the_author_posts_link() ?></h2>
-				<hr>
-				<span><i class="fa fa-eye"></i> <?php echo post_view_count(get_the_ID()); // dont-delete ?> </span>
-				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-				<span class="comments-number"> <i class="fa fa-comments-o"></i> <?php comments_popup_link( '<span class="leave-reply">' . __( '0', 'themeum' ) . '</span>', __( '1', 'themeum' ), __( '%', 'themeum' ) ); ?></span>
-				<?php endif; //.comment-link ?>
-			</div>
-		</div>
+	<div class="blog-item">
 		
-		<div class="col-sm-10">
+		<div class="col-xs-12">
 			<div class="blog-content">
 			<div class="featured-image">
 					<?php $video_source = rwmb_meta( 'thm_video_source' ); ?>
@@ -27,11 +16,11 @@
 					<?php elseif ($video_source == 3): ?>
 						<?php echo '<iframe src="http://player.vimeo.com/video/'.$video.'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'; ?>
 					<?php endif; ?>
-					<span class="date hidden-xs"><?php the_time('M'); ?><span><?php the_time('d'); ?></span></span>
+					
 				</div>
 
 		         <header class="entry-header">
-		                <h3 class="entry-title">
+		                <h3 class="entry-title brand">
 		                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		                    <?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
 		                    <sup class="featured-post"><?php _e( 'Sticky', 'themeum' ) ?></sup>
@@ -39,12 +28,19 @@
 		                </h3> <!-- //.entry-title -->
 		        </header>    
 				 <div class="post-content">
-		            <?php the_content(); ?>
-		            <?php wp_link_pages(); ?>
-		        </div>
+                    <h5 style="color:#666;"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<?php the_author_posts_link(); ?>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_the_date(); ?><?php if ($blogViews !=0) {?>
+&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp; <?php echo ($blogViews); }; ?></h5>
+                    <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+                        <span class="comments-number"> <i class="fa fa-comments-o"></i> <?php echo get_comments_number(get_the_ID()); ?></span>
+                    <?php endif;?>
+                <!-- //.facebook -->
+                 <iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=false&width=450&action=like&font=arial&colorscheme=light&height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowtransparency="true"></iframe>
+                <?php the_content(); ?>
+                    <?php wp_link_pages(); ?>
+                </div>
 			
 			  <?php the_tags( '<div class="tag-meta"><span class="tag-links"><i class="fa fa-tags"></i> ', ' ', '</span></div>' ); ?>
-				
+			
 				<div  id="author" class="media commnets">
 					<div class="pull-left">
 						<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
@@ -56,20 +52,22 @@
 				</div> <!-- .post-author -->
 
 		        <div class="clearfix post-navigation">
-		            <?php previous_post_link('<span class="previous-post pull-left btn btn-style">%link</span>','<i class="fa fa-long-arrow-left"></i> previous article'); ?>
-		             <?php next_post_link('<span class="next-post pull-right btn btn-style">%link</span>','next article <i class="fa fa-long-arrow-right"></i>'); ?>
+		            <?php previous_post_link('<span class=" pull-left btn btn-default">%link</span>','<i class="fa fa-long-arrow-left"></i> Früher'); ?>
+		             <?php next_post_link('<span class="pull-right btn btn-default">%link</span>','Nächster <i class="fa fa-long-arrow-right"></i>'); ?>
 		        </div> <!-- .post-navigation -->
-			
+
+
+				
 				<div class="response-area">
 					<?php
 						if ( comments_open() || get_comments_number() ) {
 								comments_template();
 						}
 					?>					
-			</div><!--/Response-area-->
-			</div>
+				</div><!--/Response-area-->
 		</div><!--/.blog-content-->
+    </div>
+    </div><!--/.blog-item-->
 
-	</div><!--/.blog-single-->
-
+    
 </article> <!--/#post-->
