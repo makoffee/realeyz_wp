@@ -117,7 +117,7 @@ register_sidebar( array(
 register_sidebar( array(
 'name' => 'Green-Film Sidebar',
 'id' => 'green-film-sidebar',
-'description' => 'Appears on video posts',
+'description' => 'Appears on Green Film category posts',
 'before_title' 	=> '<h3  class="widget_title">',
 'after_title' 	=> '</h3>',
 'before_widget' => '<div id="%1$s" class="widget %2$s" >',
@@ -126,7 +126,7 @@ register_sidebar( array(
 register_sidebar( array(
 'name' => 'Confrontations Sidebar',
 'id' => 'confrontations-sidebar',
-'description' => 'Appears on video posts',
+'description' => 'Appears on Confrontations Film category posts',
 'before_title' 	=> '<h3  class="widget_title">',
 'after_title' 	=> '</h3>',
 'before_widget' => '<div id="%1$s" class="widget %2$s" >',

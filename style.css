@@ -767,7 +767,7 @@ color:#FFFFFF !important;
 
 
 .no-margin {
-margin:0px;
+margin:0px !important;
 }
 .no-padding {
 padding:0px;

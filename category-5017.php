@@ -21,7 +21,7 @@ if ( isset($themeum['blog_extend']) && ($themeum['blog_extend'] == 1) ) {
 <section id="main" class="container">
     <div class="row">
         <div id="content" class="site-content <?php echo $content_class; ?>" role="main">
-        <div><img class="img-responsive" src="https://realeyz.de/wp-content/uploads/interfilm_confrontations_banner.png"></div>
+        <div><a href="http://www.interfilm.de/festival2017/wettbewerbe/online-award-1.html" target="new"><img class="img-responsive" src="https://realeyz.de/wp-content/uploads/interfilm_confrontations_banner.png"></a></div>
         <div><h2><?php single_cat_title(); ?></h2>
         <p><?php echo category_description(); ?></p></div> 
             <?php if ( have_posts() ) : ?>

@@ -6,11 +6,14 @@ window.onload = function() {
     SubscribeMonthlyId = "S479758275_DE";
     SubscribeYearlyId = "S696050413_DE";
     SubscribeSwissPromoId = "P466233560_DE";
+    SubscribeInterfilmPromoId = "P176372767_DE";
     CleengPublisherID = "502422900";
     CleengApi.setAuthOption('publisherId', CleengPublisherID);
     CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
     CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
     CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
+    CleengSwissPromoURL = CleengApi.getPurchaseUrl(SubscribeSwissPromoId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeSwissPromoId);
+    
     CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
     setLanguage = languageCookie();
 
@@ -206,6 +209,28 @@ window.onload = function() {
             locale: setLanguage,
             offerId: SubscribeSwissPromoId,
             completed: function(result) {
+                cleengCallbackHandler(result);
+                //document.location = "https://stream.realeyz.de/user/login/";
+            }
+        });
+
+        try {
+            var d = document.getElementById("checkout-step2");
+            d.className += " step-select";
+        } catch (e) {
+            console.log("no step indicator found");
+        }
+        return (false);
+    });
+
+    jQuery(".interfilm-promo").click(function() {
+        ga('send', 'event', 'acquisition', 'signup', 'interfilm-promo', 0, true);
+        CleengApi.checkout({
+            displayType: "overlay",
+            //publisherId: CleengPublisherID,
+            locale: setLanguage,
+            offerId: SubscribeInterfilmPromoId,
+            completed: function(result) {
                 document.location = "https://stream.realeyz.de/user/login/";
             }
         });
@@ -218,6 +243,8 @@ window.onload = function() {
         }
         return (false);
     });
+
+
 
     // New Modal login
     //jQuery(".login, #menu-item-23376 a").click(function() {

@@ -19,8 +19,8 @@
 					</div>
 	                 <header class="entry-header">
 	                 <div class="row">
-	                 <div class="col-xs-6">
-	                        <h3 class="entry-title">
+	                 <div class="col-xs-6 no-padding">
+	                        <h3 class="entry-title no-margin">
 	                            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 	                            <?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
 	                            <sup class="featured-post"><?php _e( 'Sticky', 'themeum' ) ?></sup>
@@ -28,12 +28,12 @@
 	                        </h3> 
 	                        <!-- //.entry-title -->
 	                </div>
-	                <div class="col-xs-6 text-right">
-			        <a class="btn btn-primary btn-sm" href="<?php $key="kmc_entry_url"; echo get_post_meta($post->ID, $key, true); ?>#WATCH">WATCH FULL FILM</a>
+	                <div class="col-xs-6 text-right no-padding">
+			        <a class="btn btn-primary btn-sm" href="<?php $key="kmc_entry_url"; echo get_post_meta($post->ID, $key, true); ?>">FILM ANSEHEN</a>
 	                </div>
 	                </div>
 	                </header>
-	                <?php if(function_exists("kk_star_ratings")) : echo kk_star_ratings($pid); endif; ?>
+	                
 	                <iframe src="https://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=false&width=450&action=like&font=arial&colorscheme=light&height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowtransparency="true"></iframe>
 	                <!-- //.facebook -->
 					 <div class="post-content">
