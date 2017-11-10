@@ -70,7 +70,7 @@ $(function() {
         if(($('.navbar-toggle').hasClass("collapsed")) === true ){
              $('.navbar').addClass("scrolled");
         } else {
-            $('.navbar').removeClass("scrolled");
+            $('.navbar').addClass("scrolled");
         }
     });
 });

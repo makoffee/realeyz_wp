@@ -21,21 +21,21 @@
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
                 <div id="footer-links" class="secondary row">
-                <div id="footer-links1" class="col-lg-3 col-md-3 col-sm-2 col-xs-4 footer-block">
+                <div id="footer-links1" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-block no-padding">
                 <?php
                 if(is_active_sidebar('footer-sidebar-1')){
                 dynamic_sidebar('footer-sidebar-1');
                 }
                 ?>
                 </div>
-                <div id="footer-links2" class="col-lg-3 col-md-3 col-sm-2 col-xs-4 footer-block">
+                <div id="footer-links2" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-block no-padding">
                 <?php
                 if(is_active_sidebar('footer-sidebar-2')){
                 dynamic_sidebar('footer-sidebar-2');
                 }
                 ?>
                 </div>
-                <div id="footer-links3" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-block">
+                <div id="footer-links3" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-block no-padding">
                 <?php
                 if(is_active_sidebar('footer-sidebar-3')){
                 dynamic_sidebar('footer-sidebar-3');
