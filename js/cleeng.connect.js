@@ -9,7 +9,7 @@ window.onload = function() {
     SubscribeInterfilmPromoId = "P176372767_DE";
     CleengPublisherID = "502422900";
     CleengApi.setAuthOption('publisherId', CleengPublisherID);
-    CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
+    CleengLoginURL = CleengApi.getLoginUrl("https://stream.realeyz.de/user/login/");
     CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
     CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
     CleengSwissPromoURL = CleengApi.getPurchaseUrl(SubscribeSwissPromoId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeSwissPromoId);
@@ -129,9 +129,11 @@ window.onload = function() {
         if ((result.success) && (accessCheck != "not-granted")) {
             ga('send', 'event', 'member', 'status', 'online', 1);
             jQuery("#menu-item-22732, #menu-item-1261").show();
+            console.log("access: " + accessCheck);
         } else {
             ga('send', 'event', 'member', 'status', 'offline', 1);
             jQuery("#menu-item-460, #menu-item-459, #menu-item-458, #menu-item-23376").show();
+            console.log("access: " + accessCheck);
         }
 
     });
@@ -272,7 +274,7 @@ window.onload = function() {
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
         ga('send', 'event', 'member', 'login', 'wp', 0);
         //window.location = CleengLoginURL;
-        window.location = "https://stream.realeyz.de/user/login"
+        window.location = CleengLoginURL;
     });
 
     // Logout click event
@@ -281,7 +283,7 @@ window.onload = function() {
         showOverlay();
         CleengApi.logout(function(result) {
             if (result.success) {
-                window.location = "https://realeyz.de/signout";
+                window.location = CleenglogoutURL;
             }
         });
         return (false);
