@@ -7,14 +7,15 @@ window.onload = function() {
     SubscribeYearlyId = "S696050413_DE";
     SubscribeSwissPromoId = "P466233560_DE";
     SubscribeInterfilmPromoId = "P176372767_DE";
+    // publisher ID and setAuthOption seem to be broken in latest version of cleeng
     CleengPublisherID = "502422900";
     CleengApi.setAuthOption('publisherId', CleengPublisherID);
-    CleengLoginURL = CleengApi.getLoginUrl("https://stream.realeyz.de/user/login/");
+    KalturaLoginURL = CleengApi.getLoginUrl("https://stream.realeyz.de/user/login/");
+    KalturaLogoutURL = "https://stream.realeyz.de/user/logout/";
     CleengSubscribeMonthlyURL = CleengApi.getPurchaseUrl(SubscribeMonthlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeMonthlyId);
     CleengSubscribeYearlyURL = CleengApi.getPurchaseUrl(SubscribeYearlyId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeYearlyId);
     CleengSwissPromoURL = CleengApi.getPurchaseUrl(SubscribeSwissPromoId, "https://subscribe.cleeng.com/realeyz/connect/offerId/" + SubscribeSwissPromoId);
     
-    CleenglogoutURL = "https://stream.realeyz.de/user/logout/";
     setLanguage = languageCookie();
 
     // check if user has failed cleeng varification
@@ -85,13 +86,13 @@ window.onload = function() {
                 ga('send', 'event', 'acquisition', 'success', trackOffer, {
                     'transport': 'beacon',
                     'hitCallback': function() {
-                        document.location = "https://stream.realeyz.de/user/login";
+                        window.location = KalturaLoginURL;
                     }
                 });
             } catch (e) {
                 // ok that didn't work - maybe they don't like being tracked, I can respect that.
                 console.log("Success event tracking failed.");
-                document.location = "https://stream.realeyz.de/user/login";
+                window.location = KalturaLoginURL;
             }
         } else {
             console.log("Something didn't work with cleeng, try to fix it with a hack.");
@@ -104,13 +105,13 @@ window.onload = function() {
                             ga('send', 'event', 'acquisition', 'success', trackOffer, {
                             'transport': 'beacon',
                             'hitCallback': function() {
-                                document.location = "https://stream.realeyz.de/user/login";
+                                window.location = KalturaLoginURL;
                                 }
                             });    
                         } catch (e) {
                             // ok that didn't work - maybe they don't like being tracked, I can respect that. (duplicated code sorry)
                             console.log("Success event tracking failed.");
-                            document.location = "https://stream.realeyz.de/user/login";
+                            window.location = KalturaLoginURL;
                         } 
                     } else {
                         console.log("access: " + accessCheck);
@@ -201,6 +202,16 @@ window.onload = function() {
         }
         return (false);
     });
+    
+    
+// test checkout URLs     
+
+jQuery(".test-checkout-url").click(function() {
+        alert ("trying to launch subscription URL: " + CleengSubscribeMonthlyURL);
+        window.location = CleengSubscribeMonthlyURL;
+
+        });
+
 
 // new monthly test subscription inline
 
@@ -261,7 +272,6 @@ window.onload = function() {
             offerId: SubscribeSwissPromoId,
             completed: function(result) {
                 cleengCallbackHandler(result);
-                //document.location = "https://stream.realeyz.de/user/login/";
             }
         });
 
@@ -278,19 +288,19 @@ window.onload = function() {
         ga('send', 'event', 'acquisition', 'signup', 'interfilm-promo', 0, true);
         CleengApi.checkout({
             displayType: "overlay",
-            //publisherId: CleengPublisherID,
             locale: setLanguage,
             offerId: SubscribeInterfilmPromoId,
             completed: function(result) {
-                document.location = "https://stream.realeyz.de/user/login/";
+                cleengCallbackHandler(result);
             }
         });
-
+        
+        // try to reset step indicators for checkout pages
         try {
             var d = document.getElementById("checkout-step2");
             d.className += " step-select";
         } catch (e) {
-            console.log("no step indicator found");
+            console.log("UI: Skipping step indicators");
         }
         return (false);
     });
@@ -308,7 +318,7 @@ window.onload = function() {
     //        locale: setLanguage,
     //        completed: function(result) {
     //            if ((result.authorizationSuccessful)) {
-    //                window.location = CleengLoginURL;
+    //                window.location = KalturaLoginURL;
     //            } else {
     //                console.log("Access was not granted.");
     //                return (false);
@@ -318,12 +328,11 @@ window.onload = function() {
     //    return (false);
     //});
 
-    // feels good man
+    // Login click
     jQuery(".login, #menu-item-23376 a").click(function() {
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
         ga('send', 'event', 'member', 'login', 'wp', 0);
-        //window.location = CleengLoginURL;
-        window.location = CleengLoginURL;
+        window.location = KalturaLoginURL;
     });
 
     // Logout click event
@@ -332,7 +341,7 @@ window.onload = function() {
         showOverlay();
         CleengApi.logout(function(result) {
             if (result.success) {
-                window.location = CleenglogoutURL;
+                window.location = KalturaLogoutURL;
             }
         });
         return (false);
