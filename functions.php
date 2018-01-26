@@ -834,3 +834,11 @@ function find_img_src($post) {
 
 #add_filter( 'the_content', 'nl2br' );
 #add_filter( 'the_excerpt', 'nl2br' );
+
+//Hide categories from WordPress category widget
+function exclude_widget_categories($args){
+    $exclude = "1,56,57,7,3,42,5017,5018,55";
+    $args["exclude"] = $exclude;
+    return $args;
+}
+add_filter("widget_categories_args","exclude_widget_categories");

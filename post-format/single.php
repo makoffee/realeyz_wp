@@ -38,10 +38,8 @@
                 <?php the_content(); ?>
                     <?php wp_link_pages(); ?>
                 </div>
-
-		        <?php the_tags( '<div class="tag-meta"><span class="tag-links"><i class="fa fa-tags"></i> ', ' ', '</span></div>' ); ?>
-			
-				<div  id="author" class="media commnets">
+                
+                <div  id="author" class="media commnets">
 					<div class="pull-left">
 						<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 					</div>
@@ -50,13 +48,35 @@
 					<p><?php the_author_meta('description'); ?></p>
 					</div>
 				</div> <!-- .post-author -->
-
-		        <div class="clearfix post-navigation">
-		            <?php previous_post_link('<span class=" pull-left btn btn-default">%link</span>','<i class="fa fa-long-arrow-left"></i> Früher'); ?>
-		             <?php next_post_link('<span class="pull-right btn btn-default">%link</span>','Nächster <i class="fa fa-long-arrow-right"></i>'); ?>
+				
+				<?php the_tags( '<div class="tag-meta"><span class="tag-links"><i class="fa fa-tags"></i> ', ' ', '</span></div>' ); ?>
+				
+				<div class="clearfix post-navigation">
+				    <?php previous_post_link('<span class=" pull-left btn btn-primary btn-sm">%link</span>','<i class="fa fa-long-arrow-left"></i> Früher'); ?>
+				    <?php next_post_link('<span class="pull-right btn btn btn-primary btn-sm">%link</span>','Nächster <i class="fa fa-long-arrow-right"></i>'); ?>
 		        </div> <!-- .post-navigation -->
+				
+<div id="disqus_thread"></div>
+<script>
 
-
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://realeyz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//realeyz.disqus.com/count.js" async></script>
 				
 				<div class="response-area">
 					<?php
@@ -64,7 +84,9 @@
 								comments_template();
 						}
 					?>					
-				</div><!--/Response-area-->
+				</div>
+				
+				<!--/Response-area-->
 		</div><!--/.blog-content-->
     </div>
     </div><!--/.blog-item-->

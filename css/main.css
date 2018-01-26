@@ -2775,7 +2775,7 @@ color:#fff;
 .tag-meta {
   background:  #F5F5F5;
   padding: 10px 20px;
-  margin-top: 40px;
+  margin: 0px 0px 20px 0px;
 }
 
 .tag-links a {
@@ -2783,7 +2783,7 @@ color:#fff;
 }
 
 #author {
-	padding: 40px 0;
+	padding: 0;
 }
 
 #author .pull-left {
