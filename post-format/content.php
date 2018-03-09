@@ -20,21 +20,29 @@
     			</div>
     		<?php  }?>
     			<header class="entry-header">
-                    <h3 class="entry-title brand">
+                    <h4 class="entry-title brand">
                         <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
                         <?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
                         <sup class="featured-post"><?php _e( 'Sticky', 'themeum' ) ?></sup>
                         <?php } ?>
-                    </h3> <!-- //.entry-title -->
+                    </h4> <!-- //.entry-title -->
                 </header>
     			 <div class="post-content">
-                    <h5 style="color:#666;"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<?php the_author_posts_link(); ?>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_the_date(); ?><?php if ($blogViews !=0) {?>
+                    <!-- custom author -->
+    			 <h5 style="color:#666;"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;
+    			 <?php
+    			 $custom_author = get_post_meta($post->ID, 'custom_author', true);
+    			 $custom_author_url = get_post_meta($post->ID, 'custom_author_url', true);	 
+    			 if (($custom_author_url != '' )&&($custom_author != '')) { ?><a href="<?php echo($custom_author_url); ?>"><?php echo($custom_author); ?></a> <?php }
+    			 else if (($custom_author_url == '' )&&($custom_author != '')) { echo($custom_author);
+    			 } else { the_author_posts_link(); } ?>
+    			 &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo get_the_date(); ?><?php if ($blogViews !=0) {?>
 &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp; <?php echo ($blogViews); }; ?></h5>
                     <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
                         <span class="comments-number"> <i class="fa fa-comments-o"></i> <?php echo get_comments_number(get_the_ID()); ?></span>
                     <?php endif;?>
                 <!-- //.facebook -->
-                <iframe src="https://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&width=450&layout=standard&action=like&size=small&show_faces=false&share=true&height=40&appId" width="450" height="40" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 <?php the_excerpt(); ?>
                 </div>
     		</div><!-- //.blog-content -->

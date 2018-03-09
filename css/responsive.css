@@ -2,7 +2,7 @@
 @media (min-width: 1200px) {
     
 .btn {
-    font-size:1em !important;
+    font-size:.9em !important;
 }
     
 #header .navbar-nav.navbar-right li:last-child a, #header .navbar-nav.navbar-right li:nth-child(2) a{
@@ -62,7 +62,7 @@ line-height: 1.5em;
 @media (min-width: 992px) and (max-width: 1199px) {
     
 .btn {
-    font-size:1em !important;
+    font-size:.8em !important;
 }
 
 #header .navbar-nav.navbar-right li:last-child a, #header .navbar-nav.navbar-right li:nth-child(2) a{

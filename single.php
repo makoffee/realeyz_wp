@@ -22,11 +22,9 @@
                 <div class="sidebar-inner">
                     <aside class="widget-area">
                     
-                    <?php if ( has_post_format('video') ) {
-                        if ( in_category( 5017 ) ) {dynamic_sidebar( 'confrontations-sidebar' );};
-                        if ( in_category( 5018 ) ) {dynamic_sidebar( 'green-film-sidebar' );};
-                    } else { 
-                        dynamic_sidebar( 'sidebar' );}?>
+                    <?php dynamic_sidebar( 'sidebar' ); ?>
+                    <!-- custom sidebars should go here -->
+                    
                     </aside>
                 </div>
             </div> <!-- #sidebar -->
