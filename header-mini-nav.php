@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<?php global $themeum; ?>
+<?php global $themeum; 
+
+?>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 	<?php if(isset($themeum['favicon'])){ ?>
 		<link rel="shortcut icon" href="<?php echo $themeum['favicon']; ?>" type="image/x-icon"/>
 	<?php }else{ ?>
@@ -36,7 +38,8 @@
 </head>
 
 <body <?php body_class() ?>>
-<div id="page" class="hfeed site">
+	<div id="page" class="hfeed site">
+
 		<header id="header" class="site-header" role="banner">      
 	        <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
 	            <div class="container-wide">
@@ -74,6 +77,21 @@
 							?>
 	                    </h1></a>
 	                    
+	                </div>
+	                <div class="collapse navbar-collapse">
+	                    <?php if(has_nav_menu('primary')): ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false,'menu_class' => 'nav navbar-nav navbar-left', 'walker' => new Onepage_Walker()) ); ?>
+						<?php endif; ?>
+						<?php if(has_nav_menu('secondary')): ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'secondary','container' => false,'menu_class' => 'nav navbar-nav navbar-right navbar-login', 'walker' => new Onepage_Walker()) ); ?>
+						<?php endif; ?>
+	                </div>
+	                <div class="login-widget">
+	                <?php
+                    if(is_active_sidebar('login-widget')){
+                    dynamic_sidebar('login-widget');
+                    }
+                ?>
 	                </div>
 	            </div>
 	        </div>

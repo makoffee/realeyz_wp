@@ -834,3 +834,5 @@ function exclude_widget_categories($args){
     return $args;
 }
 add_filter("widget_categories_args","exclude_widget_categories");
+
+add_filter( 'json_query_vars', 'filterJsonQueryVars' );

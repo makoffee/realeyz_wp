@@ -1999,3 +1999,11 @@ box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
 .format-video .featured-image  { max-height: none !important; }
 .kksr-legend span {display: inline-block !important; }
 .kksr-legend span {padding-bottom: 20px; }
+
+.fa-refresh:before { display:none !important; }
+.cleeng-checkout-main-container { padding-bottom:550px !important; }
+.cleeng-checkout-loader {display: none !important;}
+
+.hidden-xs-inline{
+    display: inline-block !important;
+}

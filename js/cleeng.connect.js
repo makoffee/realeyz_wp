@@ -11,8 +11,8 @@ window.onload = function() {
     CleengApi.setAuthOption('publisherId', CleengPublisherID);
     
     // Define URLs
-    CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
-    KalturaLoginURL = CleengApi.getLoginUrl("https://stream.realeyz.de/");
+    //CleengLoginURL = CleengApi.getLoginUrl("https://subscribe.cleeng.com/realeyz/connect");
+    CleengLoginURL = "https://stream.realeyz.de/user/login/";
     KalturaLogoutURL = "https://stream.realeyz.de/user/logout/";
     
     // Build redirect signup URLs
@@ -47,21 +47,28 @@ window.onload = function() {
     // auto loggout users who do not have access or failed to complete signup
 
     if (accessCheck == "not-granted") {
-        CleengApi.logout();
+        //CleengApi.logout();
     }
     
     // display nav UI based on cleeng login status
-    
+    //CleengApi.getAccessStatus(offerId, function(result) {
     CleengApi.autologin(function(result) {
-
-        if ((result.success) && (accessCheck != "not-granted")) {
-            ga('send', 'event', 'member', 'status', 'online', 1);
-            jQuery("#menu-item-22732, #menu-item-1261").show();
-            console.log("access: " + accessCheck);
+//&& (accessCheck != "not-granted")
+        if (result.success) {
+            
+            if (accessCheck != "not-granted"){
+                ga('send', 'event', 'member', 'status', 'online', 1);
+                jQuery("#menu-item-22732, #menu-item-1261").show();
+                console.log("access success: " + accessCheck);
+            } else {
+                ga('send', 'event', 'member', 'status', 'offline', 1);
+                jQuery("#menu-item-1261").show();
+                console.log("access fail: " + accessCheck);
+            }
         } else {
             ga('send', 'event', 'member', 'status', 'offline', 1);
             jQuery("#menu-item-460, #menu-item-459, #menu-item-458, #menu-item-23376").show();
-            console.log("access: " + accessCheck);
+            console.log("access fail: " + accessCheck);
         }
 
     });
@@ -123,14 +130,14 @@ window.onload = function() {
                     'transport': 'beacon',
                     'hitCallback': function() {
                         window.location = CleengLoginURL;
-                        //window.location = CleengApi.getLoginUrl("https://stream.realeyz.de/?signUp=" + subscriptionID);
+                        // window.location = "https://stream.realeyz.de/?signUp=" + subscriptionID;
                     }
                 });
             } catch (e) {
                 // ok that didn't work - maybe they don't like being tracked, I can respect that.
                 console.log("Success event tracking failed.");
                 window.location = CleengLoginURL;
-                //window.location = CleengApi.getLoginUrl("https://stream.realeyz.de/?signUp=" + subscriptionID);
+                //window.location = "https://stream.realeyz.de/?signUp=" + subscriptionID;
             }
         } else {
             console.log("Something didn't work with cleeng, try to fix it with a hack.");
@@ -144,14 +151,14 @@ window.onload = function() {
                             'transport': 'beacon',
                             'hitCallback': function() {
                                 window.location = CleengLoginURL;
-                                //window.location = CleengApi.getLoginUrl("https://stream.realeyz.de/?signUp=" + subscriptionID);
+                                //window.location = "https://stream.realeyz.de/?signUp=" + subscriptionID;
                                 }
                             });    
                         } catch (e) {
                             // ok that didn't work - maybe they don't like being tracked, I can respect that. (duplicated code sorry)
                             console.log("Success event tracking failed.");
                             window.location = CleengLoginURL;
-                            //window.location = CleengApi.getLoginUrl("https://stream.realeyz.de/?signUp=" + subscriptionID);
+                            //window.location = "https://stream.realeyz.de/?signUp=" + subscriptionID;
                         } 
                     } else {
                         // If the user failed payment / cancled / or closed window
@@ -200,7 +207,6 @@ window.onload = function() {
         ga('send', 'event', 'acquisition', 'signup', 'monthly-plan', 0, true);
         CleengApi.checkout({
             displayType: "overlay",
-            //publisherId: CleengPublisherID,
             locale: setLanguage,
             offerId: SubscribeMonthlyId,
             completed: function(result) {
@@ -211,6 +217,7 @@ window.onload = function() {
         try {
             var d = document.getElementById("checkout-step2");
             d.className += " step-select";
+            jQuery(".cleeng-checkout-loader").remove();
         } catch (e) {
             console.log("UI: no step indicator found");
         }
@@ -218,9 +225,9 @@ window.onload = function() {
     });
 
 
-    // new monthly test subscription inline
+    // new monthly subscription inline
 
-    jQuery(".monthly-test").click(function() {
+    jQuery(".monthly-plan-inline").click(function() {
         jQuery("#checkout-offer").remove();
         ga('send', 'event', 'acquisition', 'signup', 'monthly-plan', 0, true);
         CleengApi.checkout({
@@ -236,6 +243,32 @@ window.onload = function() {
         try {
             var d = document.getElementById("checkout-step2");
             d.className += " step-select";
+            jQuery(".cleeng-checkout-loader").remove();
+        } catch (e) {
+            console.log("no step indicator found");
+        }
+        return (false);
+    });
+    
+    // new yearly subscription inline
+
+    jQuery(".yearly-plan-inline").click(function() {
+        jQuery("#checkout-offer").remove();
+        ga('send', 'event', 'acquisition', 'signup', 'yearly-plan', 0, true);
+        CleengApi.checkout({
+            displayType: "inline",
+            containerId: "checkout",
+            locale: setLanguage,
+            offerId: SubscribeMonthlyId,
+            completed: function(result) {
+                cleengCallbackHandler(result, SubscribeMonthlyId);
+            }
+        });
+
+        try {
+            var d = document.getElementById("checkout-step2");
+            d.className += " step-select";
+            jQuery(".cleeng-checkout-loader").remove();
         } catch (e) {
             console.log("no step indicator found");
         }
@@ -248,18 +281,16 @@ window.onload = function() {
         ga('send', 'event', 'acquisition', 'signup', 'yearly-plan', 0, true);
         CleengApi.checkout({
             displayType: "overlay",
-            //publisherId: CleengPublisherID,
             locale: setLanguage,
             offerId: SubscribeYearlyId,
             completed: function(result) {
                 cleengCallbackHandler(result, SubscribeYearlyId);
             }
         });
-        //showOverlay();
-        //window.location = CleengSubscribeYearlyURL;
         try {
             var d = document.getElementById("checkout-step2");
             d.className += " step-select";
+            jQuery(".cleeng-checkout-loader").remove();
         } catch (e) {
             console.log("no step indicator found");
         }
@@ -272,7 +303,6 @@ window.onload = function() {
         ga('send', 'event', 'acquisition', 'signup', 'swiss-promo', 0, true);
         CleengApi.checkout({
             displayType: "overlay",
-            //publisherId: CleengPublisherID,
             locale: setLanguage,
             offerId: SubscribeSwissPromoId,
             completed: function(result) {
@@ -339,6 +369,7 @@ window.onload = function() {
 
     // Login click event
     jQuery(".login, #menu-item-23376 a").click(function() {
+        CleengApi.logout();
         document.cookie = "realeyzLoginTry=1; domain=realeyz.de";
         ga('send', 'event', 'member', 'login', 'wp', 0);
         window.location = CleengLoginURL;
