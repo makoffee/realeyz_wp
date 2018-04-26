@@ -550,7 +550,7 @@ p {
     max-height: 420px;
 }
 
-    blog-item ,
+.blog-item ,
   .blog-single{
   display: block;
 }
@@ -960,14 +960,15 @@ p {
 
 }
 
-/* XS Portrait */
+}
 
+/* XS Portrait */
+@media (min-width: 480px) {
+    
 #hero {
     padding-top: 112px;
     padding-bottom: 41px;
 }
-
-@media ( max-width: 480px) {
 
   .blog-content p{
     font-size: 14px;

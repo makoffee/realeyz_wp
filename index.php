@@ -4,8 +4,8 @@
 global $themeum;
 
 $sidebar = 'right';
-$content_class = 'col-md-9';
-$sidebar_class = 'col-md-3';
+$content_class = 'col-md-8';
+$sidebar_class = 'col-xs-12 col-sm-12 col-md-4';
 
 if ( isset($themeum['blog_extend']) && ($themeum['blog_extend'] == 1) ) {
     if ($themeum['sidebar_pos'] == 'left') {

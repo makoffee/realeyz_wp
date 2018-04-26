@@ -4,8 +4,8 @@
 global $themeum;
 
 $sidebar = 'right';
-$content_class = 'col-md-9';
-$sidebar_class = 'col-md-3';
+$content_class = 'col-xs-12 col-sm-12 col-md-8 col-lg-8';
+$sidebar_class = 'col-xs-12 col-sm-12 col-md-4 col-lg-4';
 
 if ( isset($themeum['blog_extend']) && ($themeum['blog_extend'] == 1) ) {
     if ($themeum['sidebar_pos'] == 'left') {
@@ -20,7 +20,7 @@ if ( isset($themeum['blog_extend']) && ($themeum['blog_extend'] == 1) ) {
 
 <section id="main" class="container">
     <div class="row">
-        <div id="content" class="site-content <?php echo $content_class; ?>" role="main">
+        <div id="content" class="site-content <?php echo $content_class; ?> no-padding" role="main">
 
             <?php if ( have_posts() ) : ?>
 

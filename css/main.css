@@ -2521,7 +2521,7 @@ div.wpcf7-mail-sent-ok{
 
 .blog-item ,
 .blog-single{
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
