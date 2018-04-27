@@ -10,6 +10,14 @@
 }
 
 @font-face {
+  font-family: 'cooperhewitt-medium';
+  src: url('../../fonts/CooperHewitt-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/CooperHewitt-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/CooperHewitt-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/CooperHewitt-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
   font-family: 'cooperhewitt-thin';
   src: url('../../fonts/CooperHewitt-Thin.eot'); /* IE9 Compat Modes */
   src: url('../../fonts/CooperHewitt-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -50,7 +58,7 @@ h1, h2, h3 {
 }
 
 h4, h5, h6 {
-	font-family: 'cooperhewitt-book', sans-serif;
+	font-family: 'cooperhewitt-light', sans-serif;
 	font-weight: normal;
 }
 
@@ -397,7 +405,7 @@ background: #06a0c6;
 }
 
 .btn {
-    font-family: "cooperhewitt-book";
+    font-family: "cooperhewitt-medium";
     padding-bottom: 2px;
 }
 
@@ -453,16 +461,17 @@ background: #06a0c6;
     border-color: #04d361;
 }
 
+
 .btn-success:hover, .btn-success:active, .btn-success:focus {
-    color: #04d361 !important;
-    background: #FFFFFF !important;
+    color: #04d361;
+    background: rgba(0, 0, 0, 0);
     border-color: #04d361;
 }
 
-.btn-success:hover, .btn-success:active, .btn-success:focus {
-    color: #04d361
-    background: rgba(0, 0, 0, 0);
-    border-color: #04d361;
+.btn-transparent.btn-success:hover, .btn-transparent.btn-success:active, .btn-transparent.btn-success:focus {
+    color: #ffffff !important;
+    background: #04d361 !important;
+    border-color: #04d361 !important;
 }
 
 .btn-info {

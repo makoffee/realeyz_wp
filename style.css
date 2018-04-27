@@ -3,8 +3,8 @@ Theme Name: realeyz
 Theme URI: https://github.com/makoffee/realeyz_wp
 Author: Matt Coffee
 Author URI: http://mattcoffee.com
-Description: Custom video streaming marketing site and blog theme based on Enter and Boostrap 3.  
-Version: 1.41
+Description: Custom video streaming marketing site and blog theme based on Enter and Bootstrap 3.  
+Version: 1.42
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:
@@ -18,7 +18,7 @@ Text Domain: mattcoffee.com
 @import url('css/main.css');
 
 
-
+ 
 
 #main {
     margin: 140px auto;
@@ -2007,3 +2007,8 @@ box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
 .hidden-xs-inline{
     display: inline-block !important;
 }
+
+html {-font-smoothing: antialiased; }
+
+.rw-report-link a {display: none !important; visability: none !important;}
+ 

@@ -203,7 +203,7 @@ h4 {
 
   .plan ul {
     margin-bottom: 30px;
-    text-align:center;
+    text-align:left;
     margin-left: 0px;
     margin-right: 0px;
     padding-left: 0px;
@@ -868,18 +868,23 @@ p {
   
 .plan ul {
     margin-bottom: 30px;
-    text-align:center;
+    text-align:left;
     margin-left: 0px;
     margin-right: 0px;
-    padding-left: 0px;
+    padding-left: 15px;
     padding-right: 0px;
   }
+  
+.plan ul li span {
+    text-indent: -15em;
+}
 
   .plan .fa-li {
     position: relative !important;
     top: 0px !important;
     left: 0px !important;
     padding-right: 5px;
+
   }
   
    .single-blog .pull-left{
@@ -963,7 +968,8 @@ p {
 }
 
 /* XS Portrait */
-@media (min-width: 480px) {
+
+@media (max-width: 480px) {
     
 #hero {
     padding-top: 112px;
