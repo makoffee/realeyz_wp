@@ -21,7 +21,7 @@
 	<![endif]-->
 	<script type="text/javascript" src="https://cleeng.com/js-api/3.0/api.js"></script>
 	<?php wp_head(); ?>
-	<meta name="google-site-verification" content="C-MKcyCrXIuvy4_vWJq39Kc2MGP31_jr5pRBPASmoEE" />
+	<meta name="google-site-verification" content="u8FyLuBYzxLwKLV7PL6nVWWSePeg9TD9sqykrU59diA" />
 	<!-- Facebook Pixel Code -->
         <script>
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?

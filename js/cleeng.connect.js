@@ -259,9 +259,9 @@ window.onload = function() {
             displayType: "inline",
             containerId: "checkout",
             locale: setLanguage,
-            offerId: SubscribeMonthlyId,
+            offerId: SubscribeYearlyId,
             completed: function(result) {
-                cleengCallbackHandler(result, SubscribeMonthlyId);
+                cleengCallbackHandler(result, SubscribeYearlyId);
             }
         });
 
