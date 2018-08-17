@@ -876,15 +876,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 }
 
 #funktions {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+20,dddddd+35,cccccc+50,dddddd+65,ffffff+80 */
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 20%, #dddddd 35%, #cccccc 50%, #dddddd 65%, #ffffff 80%); /* FF3.6-15 */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#ffffff), color-stop(35%,#dddddd), color-stop(50%,#cccccc), color-stop(65%,#dddddd), color-stop(80%,#ffffff)); /* Chrome4-9,Safari4-5 */
-background: -webkit-linear-gradient(top, #ffffff 20%,#dddddd 35%,#cccccc 50%,#dddddd 65%,#ffffff 80%); /* Chrome10-25,Safari5.1-6 */
-background: -o-linear-gradient(top, #ffffff 20%,#dddddd 35%,#cccccc 50%,#dddddd 65%,#ffffff 80%); /* Opera 11.10-11.50 */
-background: -ms-linear-gradient(top, #ffffff 20%,#dddddd 35%,#cccccc 50%,#dddddd 65%,#ffffff 80%); /* IE10 preview */
-background: linear-gradient(to bottom, #ffffff 20%,#dddddd 35%,#cccccc 50%,#dddddd 65%,#ffffff 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+color: #ffffff !important;
+background: #000000;
+background: -moz-linear-gradient(top, #262626 0%, #000000 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #262626), color-stop(100%, #000000));
+background: -webkit-linear-gradient(top, #262626 0%, #000000 100%);
+background: -o-linear-gradient(top, #262626 0%, #000000 100%);
+background: -ms-linear-gradient(top, #262626 0%, #000000 100%);
+background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#000000', GradientType=0 );
 }
 
 
@@ -1161,19 +1161,23 @@ width:100% !important;
     border-radius: 2.5em !important;
 }
 
-.btn-lg {
-    padding: 0px 1.25em 0px 1.25em !important;
-    line-height: 2.5em;
-    height: 2.5em;
-    border-radius: 2px;
-    font-size:1.1em;
-}
+
 .btn {
     padding: 0px 1em 0px 1em !important;
     line-height: 2.5em;
     height: 2.5em;
     border-radius: 2px;
+    text-decoration: none !important;
 }
+
+.btn-lg {
+    padding: 0px 1.25em 0px 1.25em !important;
+    line-height: 3.1em !important;
+    height: 3em !important;
+    border-radius: 2px;
+    font-size:1.1em;
+}
+
 .btn-search {
     padding: 0px .5em !important;
     line-height: 1em !important;
@@ -2011,4 +2015,7 @@ box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.16);
 html {-font-smoothing: antialiased; }
 
 .rw-report-link a {display: none !important; visability: none !important;}
+
+/* kill discover */
+#menu-item-460 {display: none !important; visability: none !important;}
  

@@ -836,3 +836,15 @@ function exclude_widget_categories($args){
 add_filter("widget_categories_args","exclude_widget_categories");
 
 add_filter( 'json_query_vars', 'filterJsonQueryVars' );
+
+// Makes menu urls work with Qtranslate
+
+function qtranslate_menu_item( $menu_item ) {
+  if (stripos($menu_item->url, get_site_url()) !== false){
+    $menu_item->url = qtrans_convertURL($menu_item->url);
+  }     
+  return $menu_item;
+}
+
+add_filter('wp_setup_nav_menu_item', 'qtranslate_menu_item', 0);
+/**************************************************/

@@ -57,7 +57,7 @@ get_header();
 				
 				
 				
-					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>); background-size:cover; background-position: top center;'<?php endif; ?>>
+					<section id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>); background-size:cover; background-position: center center;'<?php endif; ?>>
 						<div class="container page-content <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">
 					
 							<?php echo do_shortcode(get_the_content()); ?>
@@ -68,7 +68,7 @@ get_header();
 				elseif( $page_section == 'full' )
 				{
 				?>
-					<div id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>full-width clearfix"<?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>);'<?php endif; ?>>
+					<div id="<?php echo $post->post_name; ?>" class="<?php echo $pad_class; ?>full-width clearfix" <?php if($background_color != ""): ?> style='background-color:<?php echo $background_color ?>;'<?php elseif($image !=""): ?> style='background-image:url(<?php echo $image ?>); background-size:cover; background-position: center center;'<?php endif; ?>>
 						<?php if( $no_title != 1 ){ ?>
 							<div class="clearfix title-wrap">
 							   <h2 class="title <?php if($background_color != ""): ?>white<?php elseif($image != ""): ?>white<?php endif; ?>">	

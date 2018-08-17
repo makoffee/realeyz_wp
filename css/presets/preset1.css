@@ -52,7 +52,13 @@ b, strong {
     font-family: 'cooperhewitt-bold', sans-serif;
 }
 
-h1, h2, h3 {
+h1 {
+	font-family: 'cooperhewitt-Medium', sans-serif;
+	font-weight: lighter;
+}
+
+
+h2, h3 {
 	font-family: 'cooperhewitt-light', sans-serif;
 	font-weight: normal;
 }
@@ -405,7 +411,7 @@ background: #06a0c6;
 }
 
 .btn {
-    font-family: "cooperhewitt-medium";
+    font-family: "cooperhewitt-book";
     padding-bottom: 2px;
 }
 
@@ -419,10 +425,44 @@ background: #06a0c6;
     border-color: #06a0c6;
 }
 
+.btn-convert {
+    color: #fff;
+background: #6d10e0;
+background: -moz-linear-gradient(-45deg, #6d10e0 0%, #d21872 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, #6d10e0), color-stop(100%, #d21872));
+background: -webkit-linear-gradient(-45deg, #6d10e0 0%, #d21872 100%);
+background: -o-linear-gradient(-45deg, #6d10e0 0%, #d21872 100%);
+background: -ms-linear-gradient(-45deg, #6d10e0 0%, #d21872 100%);
+background: linear-gradient(135deg, #6d10e0 0%, #d21872 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d10e0', endColorstr='#d21872', GradientType=1 );
+-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.36);
+-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.36);
+box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.36);
+border: none;
+}
+
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
     color: #06a0c6;
     background: #ffffff;
     border-color: #06a0c6;
+}
+
+.btn-convert:hover, .btn-convert:active, .btn-primary:focus {
+    color: #ffffff;
+background: #d21872;
+background: -moz-linear-gradient(-45deg, #d21872 0%, #6d10e0 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, #d21872), color-stop(100%, #6d10e0));
+background: -webkit-linear-gradient(-45deg, #d21872 0%, #6d10e0 100%);
+background: -o-linear-gradient(-45deg, #d21872 0%, #6d10e0 100%);
+background: -ms-linear-gradient(-45deg, #d21872 0%, #6d10e0 100%);
+background: linear-gradient(135deg, #d21872 0%, #6d10e0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d21872', endColorstr='#6d10e0', GradientType=1 );
+border: none;
+-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.36);
+-moz-box-shadow: 0px 3px 58px 0px rgba(0,0,0,0.36);
+box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.36);
+margin-top:-4px;
+margin-bottom:4px;
 }
 
 
