@@ -2047,4 +2047,6 @@ html {-font-smoothing: antialiased; }
   -ms-filter: blur(5px);
   filter: blur(5px);
 }
+
+span.avoidwrap { display:inline-block; }
  

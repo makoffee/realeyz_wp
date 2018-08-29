@@ -447,7 +447,7 @@ border: none;
     border-color: #06a0c6;
 }
 
-.btn-convert:hover, .btn-convert:active, .btn-primary:focus {
+.btn-convert:hover, .btn-convert:active, .btn-convert:focus {
     color: #ffffff;
 background: #d21872;
 background: -moz-linear-gradient(-45deg, #d21872 0%, #6d10e0 100%);
