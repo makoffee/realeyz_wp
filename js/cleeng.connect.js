@@ -52,23 +52,26 @@ window.onload = function() {
     
     // display nav UI based on cleeng login status
     //CleengApi.getAccessStatus(offerId, function(result) {
+
+    
     CleengApi.autologin(function(result) {
 //&& (accessCheck != "not-granted")
         if (result.success) {
             
-            if (accessCheck != "not-granted"){
-                ga('send', 'event', 'member', 'status', 'online', 1);
-                jQuery("#menu-item-22732, #menu-item-1261").show();
-                console.log("access success: " + accessCheck);
-            } else {
+            if (accessCheck == "not-granted"){
                 ga('send', 'event', 'member', 'status', 'offline', 1);
                 jQuery("#menu-item-1261").show();
-                console.log("access fail: " + accessCheck);
+                console.log("cleeng result [not-granted]: " + result.success);
+                
+            } else {
+                ga('send', 'event', 'member', 'status', 'online', 1);
+                jQuery("#menu-item-22732, #menu-item-1261").show();
+                console.log("cleeng result 1 [granted]: " + result.customerToken);
             }
         } else {
             ga('send', 'event', 'member', 'status', 'offline', 1);
             jQuery("#menu-item-460, #menu-item-459, #menu-item-458, #menu-item-23376").show();
-            console.log("access fail: " + accessCheck);
+            console.log("cleeng result 3 [not logged in]: " + result.success);
         }
 
     });
